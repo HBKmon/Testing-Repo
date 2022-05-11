@@ -1,0 +1,1181 @@
+<Sysmon schemaversion="4.23">
+	<HashAlgorithms>*</HashAlgorithms>
+	<!-- This now also determines the file names of the files preserved (String) -->
+	<CheckRevocation />
+	<EventFiltering>
+		<Sysmon schemaversion="4.23">
+	<HashAlgorithms>*</HashAlgorithms>
+	<!-- This now also determines the file names of the files preserved (String) -->
+	<CheckRevocation />
+	<EventFiltering>
+		<RuleGroup name="" groupRelation="or">
+			<!-- Event ID 1 == Process Creation. -->
+			<ProcessCreate onmatch="include">
+				<!--New Addition-->
+				<CommandLine condition="contains" name="22- Execution _ Suspicious Cmdline - JScript Engine CLSID">{cc5bbec3-db4a-4bed-828d-08d78ee3e1ed}</CommandLine>
+				<CommandLine condition="contains" name="22- Execution _ Unusual Scripting Engine in use - jscript9.dll">{16d51579-a30b-4c8b-a276-0ff4dc41e755}</CommandLine>
+				<OriginalFileName condition="is" name="Binary Rename _ cscript.exe">cscript.exe</OriginalFileName>
+				<OriginalFileName condition="is" name="Binary Rename _ wscript.exe">wscript.exe</OriginalFileName>
+				<OriginalFileName condition="is" name="Binary Rename _ jscript.exe">jscript.exe</OriginalFileName>
+				<OriginalFileName condition="is" name="Binary Rename _ powershell.exe">powershell.exe</OriginalFileName>
+				<OriginalFileName condition="is" name="Binary Rename _ schtasks.exe">schtasks.exe</OriginalFileName>
+				<OriginalFileName condition="is" name="Binary Rename _ certutil.exe">certutil.exe</OriginalFileName>
+				<OriginalFileName condition="is" name="Binary Rename _ regsvr32.exe">regsvr32.exe</OriginalFileName>
+				<OriginalFileName condition="is" name="Binary Rename _ at.exe">at.exe</OriginalFileName>
+				<OriginalFileName condition="is" name="Binary Rename _ reg.exe">reg.exe</OriginalFileName>
+				<OriginalFileName condition="is" name="Binary Rename _ regedit.exe">regedit.exe</OriginalFileName>
+				<OriginalFileName condition="is" name="Binary Rename _ cmd.exe">cmd.exe</OriginalFileName>
+				<OriginalFileName condition="is" name="Binary Rename _ mshta.exe">mshta.exe</OriginalFileName>
+				<OriginalFileName condition="is" name="Binary Rename _ rundll32.exe">rundll32.exe</OriginalFileName>
+				<OriginalFileName condition="is" name="Binary Rename _ msbuild.exe">msbuild.exe</OriginalFileName>
+				<OriginalFileName condition="is" name="Binary Rename _ netstat.exe">netstat.exe</OriginalFileName>
+				<OriginalFileName condition="is" name="Binary Rename _ nslookup.exe">nslookup.exe</OriginalFileName>
+				<OriginalFileName condition="is" name="Binary Rename _ MATLAB.exe">MATLAB.exe</OriginalFileName>
+				<!--New Additions Config_20210818+ -->
+				<OriginalFileName condition="is" name="Binary Rename _ spoolsv.exe">spoolsv.exe</OriginalFileName>
+				<OriginalFileName condition="is" name="Binary Rename _ sysmon.exe">sysmon.exe</OriginalFileName>
+				<!--New Additions Config_20211005+ -->
+				<OriginalFileName condition="is" name="Binary Rename _ java.exe">java.exe</OriginalFileName>
+				<OriginalFileName condition="is" name="Binary Rename _ javaw.exe">javaw.exe</OriginalFileName>
+				<!--New Additions Config_20220317+ -->
+				<OriginalFileName condition="is" name="Binary Rename _ python.exe">python.exe</OriginalFileName>
+				<OriginalFileName condition="is" name="Binary Rename _ pythonw.exe">pythonw.exe</OriginalFileName>
+				<!--New Additions Config_20220322+ -->
+				<OriginalFileName condition="is">whoami.exe</OriginalFileName>
+       				<OriginalFileName condition="is">ipconfig.exe</OriginalFileName>
+        			<OriginalFileName condition="is">tasklist.exe</OriginalFileName>
+        			<OriginalFileName condition="is">netstat.exe</OriginalFileName>
+        			<OriginalFileName condition="is">qprocess.exe</OriginalFileName>
+        			<OriginalFileName condition="is">nslookup.exe</OriginalFileName>
+        			<OriginalFileName condition="is">quser.exe</OriginalFileName>
+        			<OriginalFileName condition="is">query.exe</OriginalFileName>
+        			<OriginalFileName condition="is">tracert.exe</OriginalFileName>
+        			<OriginalFileName condition="is">tree.com</OriginalFileName>
+       				<OriginalFileName condition="is">route.exe</OriginalFileName>
+       				<OriginalFileName condition="is">runas.exe</OriginalFileName> 
+				<OriginalFileName condition="is">reg.exe</OriginalFileName>
+        			<OriginalFileName condition="is">taskkill.exe</OriginalFileName>
+      				<OriginalFileName condition="is">netsh.exe</OriginalFileName>
+        			<OriginalFileName condition="is">klist.exe</OriginalFileName>
+        			<OriginalFileName condition="is">wevtutil.exe</OriginalFileName>
+        			<OriginalFileName condition="is">taskeng.exe</OriginalFileName>
+ 				<OriginalFileName condition="is">wmiprvse.exe</OriginalFileName>
+        			<OriginalFileName condition="is">hh.exe</OriginalFileName>
+        			<OriginalFileName condition="is">cmd.exe</OriginalFileName>
+				<OriginalFileName condition="is">odbcconf.exe</OriginalFileName>
+				<OriginalFileName condition="is">cscript.exe</OriginalFileName>
+        			<OriginalFileName condition="is">wscript.exe</OriginalFileName>
+				<OriginalFileName condition="is">mshta.exe</OriginalFileName>
+        			<OriginalFileName condition="is">attrib.exe</OriginalFileName>
+        			<OriginalFileName condition="is">cmdkey.exe</OriginalFileName>
+        			<OriginalFileName condition="is">qwinsta.exe</OriginalFileName>
+        			<OriginalFileName condition="is">rwinsta.exe</OriginalFileName>
+        			<OriginalFileName condition="is">replace.exe</OriginalFileName>
+				<OriginalFileName condition="is">sc.exe</OriginalFileName>
+        			<OriginalFileName condition="is">certutil.exe</OriginalFileName>
+        			<OriginalFileName condition="is">findstr.exe</OriginalFileName>
+        			<OriginalFileName condition="is">where.exe</OriginalFileName>
+        			<OriginalFileName condition="is">xcopy.exe</OriginalFileName>
+        			<OriginalFileName condition="is">robocopy.exe</OriginalFileName>
+        			<OriginalFileName condition="is">takeown.exe</OriginalFileName>
+        			<OriginalFileName condition="is">makecab.exe</OriginalFileName>
+        			<OriginalFileName condition="is">wusa.exe</OriginalFileName>
+        			<OriginalFileName condition="is">vassadmin.exe</OriginalFileName>
+        			<OriginalFileName condition="is">winrs.exe</OriginalFileName>
+        			<OriginalFileName condition="is">computerdefaults.exe</OriginalFileName>
+        			<OriginalFileName condition="is">dism.exe</OriginalFileName>
+        			<OriginalFileName condition="is">fodhelper.exe</OriginalFileName>
+        			<OriginalFileName condition="is">mofcomp.exe</OriginalFileName>
+				<OriginalFileName condition="is">PsList.exe</OriginalFileName>
+        			<OriginalFileName condition="is">PsService.exe</OriginalFileName>
+        			<OriginalFileName condition="is">PsExec.exe</OriginalFileName>
+        			<OriginalFileName condition="is">PsExec.c</OriginalFileName>
+        			<OriginalFileName condition="is">PsGetSID.exe</OriginalFileName>
+        			<OriginalFileName condition="is">PsKill.exe</OriginalFileName>
+        			<OriginalFileName condition="is">PKill.exe</OriginalFileName>
+        			<OriginalFileName condition="is">PsLoggedOn.exe</OriginalFileName>
+        			<OriginalFileName condition="is">PsFile.exe</OriginalFileName>
+        			<OriginalFileName condition="is">PipeList.exe</OriginalFileName>
+        			<OriginalFileName condition="is">AccessChk.exe</OriginalFileName>
+        			<OriginalFileName condition="is">AccessEnum.exe</OriginalFileName>
+        			<OriginalFileName condition="is">LogonSessions.exe</OriginalFileName>
+        			<OriginalFileName condition="is">PsLogList.exe</OriginalFileName>
+        			<OriginalFileName condition="is">PsInfo.exe</OriginalFileName>
+       			 	<OriginalFileName condition="is">PsPasswd.exe</OriginalFileName>
+        			<OriginalFileName condition="is">ru.exe</OriginalFileName>
+        			<OriginalFileName condition="is">ProcDump</OriginalFileName>
+        			<OriginalFileName condition="is">bash.exe</OriginalFileName>
+        			<OriginalFileName condition="is">sdbinst.exe</OriginalFileName>
+        			<OriginalFileName condition="is">bitsadmin.exe</OriginalFileName>
+        			<OriginalFileName condition="is">MSBuild.exe</OriginalFileName>
+				<OriginalFileName condition="is">net.exe</OriginalFileName>
+				<OriginalFileName condition="is">net1.exe</OriginalFileName>
+				<OriginalFileName condition="is">systeminfo.exe</OriginalFileName>
+				<OriginalFileName condition="is">sysinfo.exe</OriginalFileName>
+				<OriginalFileName condition="is">schtasks.exe</OriginalFileName>
+				<OriginalFileName condition="is">sctasks.exe</OriginalFileName>
+				<OriginalFileName condition="is">nbtstat.exe</OriginalFileName>
+				<OriginalFileName condition="is">nbtinfo.exe</OriginalFileName>
+				<OriginalFileName condition="is">regsvcs.exe</OriginalFileName>
+				<OriginalFileName condition="is">regasm.exe</OriginalFileName>
+				<OriginalFileName condition="is">icacls.exe</OriginalFileName>	
+				<OriginalFileName condition="is">cacls.exe</OriginalFileName>
+				<OriginalFileName condition="is">nltest.exe</OriginalFileName>
+				<OriginalFileName condition="is">nltestk.exe</OriginalFileName>
+				<OriginalFileName condition="is">Adexplorer.exe</OriginalFileName>
+
+
+			</ProcessCreate>
+		</RuleGroup>
+		<RuleGroup name="" groupRelation="or">
+			<!-- Event ID 1 == Process Creation. -->
+			<ProcessCreate onmatch="exclude">
+				<!--New Addition-->
+				<Image condition="Image">cscript.exe</Image>
+				<Image condition="Image">wscript.exe</Image>
+				<Image condition="Image">jscript.exe</Image>
+				<Image condition="Image">powershell.exe</Image>
+				<Image condition="Image">schtasks.exe</Image>
+				<Image condition="Image">certutil.exe</Image>
+				<Image condition="Image">regsvr32.exe</Image>
+				<Image condition="Image">at.exe</Image>
+				<Image condition="Image">reg.exe</Image>
+				<Image condition="Image">regedit.exe</Image>
+				<Image condition="Image">cmd.exe</Image>
+				<Image condition="Image">mshta.exe</Image>
+				<Image condition="Image">rundll32.exe</Image>
+				<Image condition="Image">msbuild.exe</Image>
+				<Image condition="Image">netstat.exe</Image>
+				<Image condition="Image">nslookup.exe</Image>
+				<Image condition="Image">MATLAB.exe</Image>
+				<!--New Additions Config_20210818+ -->
+				<Image condition="Image">spoolsv.exe</Image>
+				<Image condition="Image">sysmon.exe</Image>
+				<!--New Additions Config_20211005+ -->
+				<Image condition="Image">java.exe</Image>
+				<Image condition="Image">javaw.exe</Image>
+				<!--New Additions Config_20220317+ -->
+				<Image condition="Image">python.exe</Image>
+				<Image condition="Image">pythonw.exe</Image>
+				<!--New Additions Config_20220322+ -->
+				<Image condition="image">whoami.exe</Image>
+       				<Image condition="image">ipconfig.exe</Image>
+        			<Image condition="image">tasklist.exe</Image>
+        			<Image condition="image">netstat.exe</Image>
+        			<Image condition="image">qprocess.exe</Image>
+        			<Image condition="image">nslookup.exe</Image>
+        			<Image condition="image">quser.exe</Image>
+        			<Image condition="image">query.exe</Image>
+        			<Image condition="image">tracert.exe</Image>
+        			<Image condition="image">tree.com</Image>
+       				<Image condition="image">route.exe</Image>
+       				<Image condition="image">runas.exe</Image> 
+				<Image condition="image">reg.exe</Image>
+        			<Image condition="image">taskkill.exe</Image>
+      				<Image condition="image">netsh.exe</Image>
+        			<Image condition="image">klist.exe</Image>
+        			<Image condition="image">wevtutil.exe</Image>
+        			<Image condition="image">taskeng.exe</Image>
+ 				<Image condition="image">wmiprvse.exe</Image>
+        			<Image condition="image">hh.exe</Image>
+        			<Image condition="image">cmd.exe</Image>
+				<Image condition="image">odbcconf.exe</Image>
+				<Image condition="image">cscript.exe</Image>
+        			<Image condition="image">wscript.exe</Image>
+				<Image condition="image">mshta.exe</Image>
+        			<Image condition="image">attrib.exe</Image>
+        			<Image condition="image">cmdkey.exe</Image>
+        			<Image condition="image">qwinsta.exe</Image>
+        			<Image condition="image">rwinsta.exe</Image>
+        			<Image condition="image">replace.exe</Image>
+				<Image condition="image">sc.exe</Image>
+        			<Image condition="image">certutil.exe</Image>
+        			<Image condition="image">findstr.exe</Image>
+        			<Image condition="image">where.exe</Image>
+        			<Image condition="image">xcopy.exe</Image>
+        			<Image condition="image">robocopy.exe</Image>
+        			<Image condition="image">takeown.exe</Image>
+        			<Image condition="image">makecab.exe</Image>
+        			<Image condition="image">wusa.exe</Image>
+        			<Image condition="image">vassadmin.exe</Image>
+        			<Image condition="image">winrs.exe</Image>
+        			<Image condition="image">computerdefaults.exe</Image>
+        			<Image condition="image">dism.exe</Image>
+        			<Image condition="image">fodhelper.exe</Image>
+        			<Image condition="image">mofcomp.exe</Image>
+					<Image condition="image">PsList.exe</Image>
+        			<Image condition="image">PsService.exe</Image>
+        			<Image condition="image">PsExec.exe</Image>
+        			<Image condition="image">PsExec.c</Image>
+        			<Image condition="image">PsGetSID.exe</Image>
+        			<Image condition="image">PsKill.exe</Image>
+        			<Image condition="image">PKill.exe</Image>
+        			<Image condition="image">PsLoggedOn.exe</Image>
+        			<Image condition="image">PsFile.exe</Image>
+        			<Image condition="image">PipeList.exe</Image>
+        			<Image condition="image">AccessChk.exe</Image>
+        			<Image condition="image">AccessEnum.exe</Image>
+        			<Image condition="image">LogonSessions.exe</Image>
+        			<Image condition="image">PsLogList.exe</Image>
+        			<Image condition="image">PsInfo.exe</Image>
+       			 	<Image condition="image">PsPasswd.exe</Image>
+        			<Image condition="image">ru.exe</Image>
+        			<Image condition="image">ProcDump</Image>
+        			<Image condition="image">bash.exe</Image>
+        			<Image condition="image">sdbinst.exe</Image>
+        			<Image condition="image">bitsadmin.exe</Image>
+        			<Image condition="image">MSBuild.exe</Image>
+					<Image condition="is">net.exe</Image>
+					<Image condition="is">net1.exe</Image>
+					<Image condition="is">systeminfo.exe</Image>
+					<Image condition="is">sysinfo.exe</Image>
+					<Image condition="is">schtasks.exe</Image>
+					<Image condition="is">sctasks.exe</Image>
+					<Image condition="is">nbtstat.exe</Image>
+					<Image condition="is">nbtinfo.exe</Image>
+					<Image condition="is">regsvcs.exe</Image>
+					<Image condition="is">regasm.exe</Image>
+					<Image condition="is">icacls.exe</Image>	
+					<Image condition="is">cacls.exe</Image>
+					<Image condition="is">nltest.exe</Image>
+					<Image condition="is">nltestk.exe</Image>
+					<Image condition="Image">Adexplorer.exe</Image>
+			</ProcessCreate>
+		</RuleGroup>
+		<RuleGroup name="" groupRelation="or">
+			<!-- Event ID 2 == File Creation Time. -->
+			<FileCreateTime onmatch="include"></FileCreateTime>
+		</RuleGroup>
+		<RuleGroup name="" groupRelation="or">
+			<!-- Event ID 3 == Network Connection. -->
+			<NetworkConnect onmatch="include">
+				<DestinationPort name="T1071 _ Command and Control _ Egress Traffic via Proxy" condition="is">8080</DestinationPort>
+				<DestinationPort name="T1558 _ Credential Access _ Kerberoasting _ port 88" condition="is">88</DestinationPort>
+				<DestinationPort name="T1046 _ Discovery _ Network Service Scanning SSH" condition="is">22</DestinationPort>
+				<DestinationPort name="T1046 _ Discovery _ Network Service Scanning RDP" condition="is">3389</DestinationPort>
+				<Image name="T1059.003 _ Windows Command Shell with cmd" condition="image">cmd.exe</Image>
+				<Image name="T1059.003 _ Windows Command Shell with PowerShell" condition="image">powershell.exe</Image>
+				<Image name="T1218.010 _ Defense Evasion _ Suspicious Internet Access regsrv32 " condition="image">regsvr32.exe</Image>
+				<Image name="T1218.011 _ Defense Evasion _ Suspicious Internet Access Rundll32" condition="image">rundll32.exe</Image>
+				<Image name="T1055 _ Defense Evasion _ Process Injection _ C2 within Explorer" condition="image">explorer.exe</Image>
+				<Image name="T1055 _ Defense Evasion _ Process Injection _ C2 within within ApplicationFrameHost" condition="image">ApplicationFrameHost.exe</Image>
+				<Image name="T1055 _ Defense Evasion _ Process Injection _ C2 within within AppVShNotify" condition="image">AppVShNotify.exe</Image>
+				<Image name="T1055 _ Defense Evasion _ Process Injection _ C2 within within ctfmon" condition="image">ctfmon.exe</Image>
+				<Image name="T1055 _ Defense Evasion _ Process Injection _ C2 within within dllhost" condition="image">dllhost.exe</Image>
+				<Image name="T1055 _ Defense Evasion _ Process Injection _ C2 within within RuntimeBroker" condition="image">RuntimeBroker.exe</Image>
+				<Image name="T1055 _ Defense Evasion _ Process Injection _ C2 within within ShellExperienceHost" condition="image">ShellExperienceHost.exe</Image>
+				<Image name="T1055 _ Defense Evasion _ Process Injection _ C2 within within sihost" condition="image">sihost.exe</Image>
+				<Image name="T1055 _ Defense Evasion _ Process Injection _ C2 within within taskhostw" condition="image">taskhostw.exe</Image>
+				<Image name="T1055 _ Defense Evasion _ Process Injection _ C2 within within ntsd" condition="image">ntsd.exe</Image>
+				<Image name="T1059 _ Execution _ Suspicious Internet Access wscript.exe" condition="image">wscript.exe</Image>
+				<!--New Additions Config_20210316+ -->
+				<DestinationPort name="T1046 _ Discovery _ SMTP Relaying in use" condition="is">25</DestinationPort>
+				<!--New Additions Config_20210409+ -->
+				<DestinationPort name="T1046 _ Discovery _ HTTPS port in use" condition="is">443</DestinationPort>
+				<!--New Additions Config_20210709+ -->
+				<DestinationPort name="T1046 _ Lateral Movement _ RPC port in use" condition="is">135</DestinationPort>
+				<DestinationPort name="T1046 _ Discovery _ LDAP port in use" condition="is">389</DestinationPort>
+				<DestinationPort name="T1046 _ Discovery _ LDAPS port in use" condition="is">636</DestinationPort>
+				<DestinationPort name="T1046 _ Lateral Movement _ WinRM port in use" condition="is">5985</DestinationPort>
+				<DestinationPort name="T1046 _ Lateral Movement _ WinRM(s) port in use" condition="is">5986</DestinationPort>
+				<DestinationPort name="T1046 _ Lateral Movement _ NFS port in use" condition="is">111</DestinationPort>
+				<!--New Additions Config_20220322+ -->
+				<Image name="T1547.012 _ Print Spooler Exploit _ PrintProcessor Directory" condition="image">C:\windows\System32\spoolsv.exe</Image>
+
+			</NetworkConnect>
+		</RuleGroup>
+		<RuleGroup name="Event ID-3 Exclusion" groupRelation="or">
+			<NetworkConnect onmatch="exclude">
+				<Image condition="image">lsass.exe</Image>
+				<Image condition="image">mstsc.exe</Image>
+				<Image name="Taskhostw" condition="is">C:\Program Files\ASG-Remote Desktop 2020 (X64)\ASGRD.exe</Image>
+				<Image condition="image">chrome.exe</Image>
+				<Image condition="image">firefox.exe</Image>
+				<Image condition="image">iexplore.exe</Image>
+				<Image condition="image">msedge.exe</Image>
+				<!--New Additions Config_20210316+ -->
+				<Image condition="begin with">C:\Program Files (x86)\Microsoft Office\root\Office16</Image>
+				<Image condition="begin with">C:\Program Files\Microsoft Office\root\Office16</Image>
+				<!--New Additions Config_20210326+ -->
+				<Image condition="is">C:\Windows\System32\backgroundTaskHost.exe</Image>
+				<Image condition="image">C:\Program Files (x86)\Adobe\Adobe Sync\CoreSync\CoreSync.exe</Image>
+				<Image condition="end with">SearchUI.exe</Image>
+				<Image condition="end with">g2mcomm.exe</Image>
+				<Image condition="end with">calendarreader32.exe</Image>
+				<!--New Additions Config_20210409+ -->
+				<Image condition="end with">AppData\Local\Programs\Microsoft VS Code\Code.exe</Image>
+				<Image condition="end with">AppData\Local\Microsoft\OneDrive\OneDrive.exe</Image>
+				<Image condition="is">C:\Windows\System32\smartscreen.exe</Image>
+				<Image condition="is">C:\Program Files\Java\jre-9.0.4\bin\javaw.exe</Image>
+				<Image condition="is">C:\Program Files\Common Files\microsoft shared\ClickToRun\officesvcmgr.exe</Image>
+				<Image condition="is">C:\Program Files\Microsoft VS Code\Code.exe</Image>
+				<Image condition="is">C:\Program Files (x86)\Microsoft Azure Storage Explorer\StorageExplorer.exe</Image>
+				<Image condition="end with">AppData\Local\Microsoft\OneDrive\OneDrive.exe</Image>
+				<Image condition="is">C:\Program Files (x86)\JetBrains\IntelliJ IDEA 2020.1.2\bin\idea64.exe</Image>
+				<Image condition="is">C:\WINDOWS\system32\BackgroundTaskHost.exe</Image>
+				<Image condition="is">C:\Program Files (x86)\Now Micro\Recast RCT\Right Click Tools Desktop.exe</Image>
+				<Image condition="end with">GfxDownloadWrapper.exe</Image>
+				<Image condition="end with">AppData\Local\Microsoft\Teams\current\Teams.exe</Image>
+				<!--New Additions Config_20210603+ -->
+				<Image condition="is">C:\Program Files\Microsoft\MDOP MBAM\MBAMAgent.exe</Image>
+				<Image condition="is">C:\Program Files (x86)\Cisco\Cisco AnyConnect Secure Mobility Client\vpnagent.exe</Image>
+				<Image condition="is">C:\Program Files (x86)\ITS\Onelog\Client\ClientSessionService.exe</Image>
+				<Image condition="is">C:\Windows\System32\svchost.exe</Image>
+				<!--New Additions Config_20220322+ -->
+				<Image condition="is">C:\Program Files (x86)\Tanium\Tanium Client\TaniumClient.exe</Image>
+				<Image condition="is">C:\Windows\System32\appidcertstorecheck.exe</Image>
+				<Image condition="is">C:\Program Files (x86)\DeviceLock\DeviceLock Agent\DLService.exe</Image>
+				<Image condition="is">C:\Windows\Lenovo\ImController\PluginHost86\Lenovo.Modern.ImController.PluginHost.CompanionApp.exe</Image>
+				<Image condition="is">C:\Program Files (x86)\Lenovo\VantageService\3.7.19.0\LenovoVantageService.exe</Image>
+
+
+			</NetworkConnect>
+		</RuleGroup>
+		<RuleGroup name="" groupRelation="or">
+			<!-- Event ID 5 == Process Terminated. -->
+			<ProcessTerminate onmatch="include"></ProcessTerminate>
+		</RuleGroup>
+		<RuleGroup name="" groupRelation="or">
+			<!-- Event ID 6 == Driver Loaded. -->
+			<DriverLoad onmatch="include"></DriverLoad>
+		</RuleGroup>
+		<!-- Event ID 7 == Image Loaded. -->
+		<RuleGroup name="" groupRelation="or">
+			<ImageLoad onmatch="include">
+				<!-- <Rule groupRelation="and"><ImageLoaded name="T1003 _ Mimikatz Credential Dumping with samlib.dll" condition="is">C:\Windows\System32\samlib.dll</ImageLoaded><ImageLoaded name="T1003 _ Mimikatz Credential Dumping with WinSCard.dll" condition="is">C:\Windows\System32\WinSCard.dll</ImageLoaded><ImageLoaded name="T1003 _ Mimikatz Credential Dumping with cryptdll.dll" condition="is">C:\Windows\System32\cryptdll.dll</ImageLoaded><ImageLoaded name="T1003 _ Mimikatz Credential Dumping with hid.dll" condition="is">C:\Windows\System32\hid.dll</ImageLoaded><ImageLoaded name="T1003 _ Mimikatz Credential Dumping with vaultcli.dll" condition="is">C:\Windows\System32\vaultcli.dll</ImageLoaded><ImageLoaded name="T1003 _ Mimikatz Credential Dumping with wlanapi.dll" condition="is">C:\Windows\System32\wlanapi.dll</ImageLoaded></Rule> -->
+				<Rule name="T1021.003 _ Office COM and DCOM Image Load with combase.dll" groupRelation="and">
+					<Image condition="contains all">C:\Program Files;\Microsoft Office\root\Office</Image>
+					<ImageLoaded condition="is">C:\Windows\SysWOW64\combase.dll</ImageLoaded>
+				</Rule>
+				<Rule name="T1021.003 _ Office COM and DCOM Image Load with coml2.dll" groupRelation="and">
+					<Image condition="contains all">C:\Program Files;\Microsoft Office\root\Office</Image>
+					<ImageLoaded condition="is">C:\Windows\SysWOW64\coml2.dll</ImageLoaded>
+				</Rule>
+				<Rule name="T1021.003 _ Office COM and DCOM Image Load with comsvcs.dll" groupRelation="and">
+					<Image condition="contains all">C:\Program Files;\Microsoft Office\root\Office</Image>
+					<ImageLoaded condition="is">C:\Windows\SysWOW64\comsvcs.dll</ImageLoaded>
+				</Rule>
+				<Rule name="T1055 _ Process Injection _ Office .NET Abuse: Assembly DLLs" groupRelation="and">
+					<Image condition="contains all">C:\Program Files;\Microsoft Office\root\Office</Image>
+					<ImageLoaded condition="begin with">C:\Windows\assembly\</ImageLoaded>
+				</Rule>
+				<Rule name="T1055 _ Process Injection _ Office .NET Abuse: GAC " groupRelation="and">
+					<Image condition="contains all">C:\Program Files;\Microsoft Office\root\Office</Image>
+					<ImageLoaded condition="begin with">C:\Windows\Microsoft.NET\assembly\GAC_MSIL</ImageLoaded>
+				</Rule>
+				<Rule name="T1055 _ Process Injection _ Office .NET Abuse: CLR" groupRelation="and">
+					<Image condition="contains all">C:\Program Files;\Microsoft Office\root\Office</Image>
+					<ImageLoaded condition="end with">clr.dll</ImageLoaded>
+				</Rule>
+				<Rule name="T1059.005_Command and Scripting Interpreter VBScript using VBE7INTL.DLL for WORD" groupRelation="and">
+					<Image condition="end with">winword.exe</Image>
+					<ImageLoaded condition="end with">VBE7INTL.DLL</ImageLoaded>
+				</Rule>
+				<Rule name="T1059.005_Command and Scripting Interpreter VBScript using VBE7.DLL for WORD" groupRelation="and">
+					<Image condition="end with">winword.exe</Image>
+					<ImageLoaded condition="end with">VBE7.DLL</ImageLoaded>
+				</Rule>
+				<Rule name="T1059.005_Command and Scripting Interpreter VBScript using VBEUI.DLL for WORD" groupRelation="and">
+					<Image condition="end with">winword.exe</Image>
+					<ImageLoaded condition="end with">VBEUI.DLL</ImageLoaded>
+				</Rule>
+				<Rule name="T1059.005_Command and Scripting Interpreter VBScript using VBE7INTL.DLL for POWERPOINT" groupRelation="and">
+					<Image condition="end with">powerpoint.exe</Image>
+					<ImageLoaded condition="end with">VBE7INTL.DLL</ImageLoaded>
+				</Rule>
+				<Rule name="T1059.005_Command and Scripting Interpreter VBScript using VBE7.DLL for POWERPOINT" groupRelation="and">
+					<Image condition="end with">powerpoint.exe</Image>
+					<ImageLoaded condition="end with">VBE7.DLL</ImageLoaded>
+				</Rule>
+				<Rule name="T1059.005_Command and Scripting Interpreter VBScript using VBEUI.DLL for POWERPOINT" groupRelation="and">
+					<Image condition="end with">powerpoint.exe</Image>
+					<ImageLoaded condition="end with">VBEUI.DLL</ImageLoaded>
+				</Rule>
+				<Rule name="T1059.005_Command and Scripting Interpreter VBScript using VBE7INTL.DLL for EXCEL" groupRelation="and">
+					<Image condition="end with">excel.exe</Image>
+					<ImageLoaded condition="end with">VBE7INTL.DLL</ImageLoaded>
+				</Rule>
+				<Rule name="T1059.005_Command and Scripting Interpreter VBScript using VBE7.DLL for EXCEL" groupRelation="and">
+					<Image condition="end with">excel.exe</Image>
+					<ImageLoaded condition="end with">VBE7.DLL</ImageLoaded>
+				</Rule>
+				<Rule name="T1059.005_Command and Scripting Interpreter VBScript using VBEUI.DLL for EXCEL" groupRelation="and">
+					<Image condition="end with">excel.exe</Image>
+					<ImageLoaded condition="end with">VBEUI.DLL</ImageLoaded>
+				</Rule>
+				<ImageLoaded name="T1047 _ Execution _ WMI Enumeration _ wmiutils.dll" condition="end with">wmiutils.dll</ImageLoaded>
+				<ImageLoaded name="T1218 _ Defense Evasion _ Regsvr32 with Scrobj.dll" condition="end with">scrobj.dll</ImageLoaded>
+				<ImageLoaded name="T1059 _ Execution _ Powershell with System.Management.Automation.ni.dll" condition="end with">System.Management.Automation.ni.dll</ImageLoaded>
+				<ImageLoaded name="T1059 _ Execution _ Powershell with System.Management.Automation.dll" condition="end with">System.Management.Automation.dll</ImageLoaded>
+				<ImageLoaded name="T1574.001 _ Teams DLL Hijacking with WINSTA.dll" condition="end with">\AppData\Local\Microsoft\teams\current\WINSTA.dll</ImageLoaded>
+				<ImageLoaded name="T1574.001 _ Teams DLL Hijacking with LINKINFO.dl" condition="end with">\AppData\Local\Microsoft\teams\current\LINKINFO.dll</ImageLoaded>
+				<ImageLoaded name="T1574.001 _ Teams DLL Hijacking with ntshrui.dll" condition="end with">\AppData\Local\Microsoft\teams\current\ntshrui.dll</ImageLoaded>
+				<ImageLoaded name="T1574.001 _ Teams DLL Hijacking with srvcli.dll" condition="end with">\AppData\Local\Microsoft\teams\current\srvcli.dll</ImageLoaded>
+				<ImageLoaded name="T1574.001 _ Teams DLL Hijacking with cscapi.dll" condition="end with">\AppData\Local\Microsoft\teams\current\cscapi.dll</ImageLoaded>
+				<ImageLoaded name="T1574.001 _ Teams DLL Hijacking with WindowsCodecs.dll" condition="end with">\AppData\Local\Microsoft\teams\current\WindowsCodecs.dll</ImageLoaded>
+				<ImageLoaded name="T1574.001 _ Teams DLL Hijacking with TextInputFramework.dll" condition="end with">\AppData\Local\Microsoft\teams\current\TextInputFramework.dll</ImageLoaded>
+				<ImageLoaded name="T1574.001 _ VScode DLL Hijacking with WINSTA.dll" condition="end with">\AppData\Local\Programs\Microsoft VS Code\WINSTA.dll</ImageLoaded>
+				<ImageLoaded name="T1574.001 _ VScode DLL Hijacking with LINKINFO.dll" condition="end with">\AppData\Local\Programs\Microsoft VS Code\LINKINFO.dll</ImageLoaded>
+				<ImageLoaded name="T1574.001 _ VScode DLL Hijacking with ntshrui.dll" condition="end with">\AppData\Local\Programs\Microsoft VS Code\ntshrui.dll</ImageLoaded>
+				<ImageLoaded name="T1574.001 _ VScode DLL Hijacking with srvcli.dll" condition="end with">\AppData\Local\Programs\Microsoft VS Code\srvcli.dll</ImageLoaded>
+				<ImageLoaded name="T1574.001 _ VScode DLL Hijacking with cscapi.dll" condition="end with">\AppData\Local\Programs\Microsoft VS Code\cscapi.dll</ImageLoaded>
+				<ImageLoaded name="Common Language Setup Runtime _ mscoreei.dll" condition="end with">mscoreei.dll</ImageLoaded>
+				<ImageLoaded name="Common Language Setup Runtime _ clr.dll" condition="end with">clr.dll</ImageLoaded>
+				<ImageLoaded name="Common Language Setup Runtime _ system.management.dll" condition="end with">system.management.dll</ImageLoaded>
+				<ImageLoaded name="Common Language Setup Runtime _ WMINet_Utils.dll" condition="end with">WMINet_Utils.dll</ImageLoaded>
+				<ImageLoaded name="Common Language Setup Runtime _ System.DirectoryServices.Protocols.ni.dll" condition="end with">System.DirectoryServices.Protocols.ni.dll</ImageLoaded>
+				<ImageLoaded name="Common Language Setup Runtime _ System.DirectoryServices.ni.dll" condition="end with">System.DirectoryServices.ni.dll</ImageLoaded>
+				<ImageLoaded name="Common Language Setup Runtime _ mscorwks.dll" condition="end with">mscorwks.dll</ImageLoaded>
+				<ImageLoaded name="Common Language Setup Runtime _ mscorlib.ni.dll" condition="end with">mscorlib.ni.dll</ImageLoaded>
+				<ImageLoaded name="Image loaded = wbemdisp.dll outside WSH" condition="is">C:\Windows\System32\wbem\wbemdisp.dll</ImageLoaded>
+				<ImageLoaded name="Image loaded = fastprox.dll" condition="is">C:\Windows\System32\wbem\fastprox.dll</ImageLoaded>
+				<ImageLoaded name="Image loaded = wbemcomn.dll" condition="is">C:\Windows\System32\wbemcomn.dll</ImageLoaded>
+				<ImageLoaded name="Suspicious CLR usage _ system.security.principal.dll" condition="end with">system.security.principal.dll</ImageLoaded>
+				<!--Allows interaction with windows identities (token,tickets,etc)-->
+				<ImageLoaded name="Suspicious CLR usage _ system.runtime.interopservices.dll" condition="end with">system.runtime.interopservices.dll</ImageLoaded>
+				<!--Allows windows to intereact directly with unmanaged windows api functions/dll's-->
+				<ImageLoaded name="Suspicious CLR usage _system.core.ni.dll" condition="end with">system.core.ni.dll</ImageLoaded>
+				<!--.NET core features-->
+				<ImageLoaded name="Suspicious CLR usage _system.core.dll" condition="end with">system.core.dll</ImageLoaded>
+				<ImageLoaded name="T1021.001_RDP Abuse_SharpRDP" condition="end with">mstscax.dll</ImageLoaded>
+				<!--New Addition-->
+				<ImageLoaded name="Rioch Printer Exploit" condition="end with">watermark.dll</ImageLoaded>
+				<ImageLoaded name="Rioch Printer Exploit" condition="end with">overlaywatermark.dll</ImageLoaded>
+				<ImageLoaded name="Rioch Printer Exploit" condition="end with">popup.dll</ImageLoaded>
+				<ImageLoaded name="Rioch Printer Exploit" condition="end with">headerfooter.dll</ImageLoaded>
+				<!--New Additions Config_20210316+ -->
+				<ImageLoaded name="22 _ T1064 _ Unusual Scripting Engine in use _ jscript9.dll" condition="is">jscript9.dll</ImageLoaded>
+				<ImageLoaded name="29 _ T1170 _ Execution _ Suspicious Microsoft.XMLDOM module load" condition= "end with">msxml3.dll</ImageLoaded>
+				<!--New Additions Config_20210409+ -->
+				<ImageLoaded name="T1053 _ Persistence _ Suspect use of Scheduled Tasks DLL" condition="end with">taskschd.dll</ImageLoaded>
+
+				<!--New Additions Config_20210803+ -->
+				<ImageLoaded name="T1059 _ Execution vbscript DLL loaded outside of WSH" condition="end with">vbscript.dll</ImageLoaded>
+				<ImageLoaded name="T1071 _ Ieproxy.dll loaded outside of internet explorer" condition="end with">ieproxy.dll</ImageLoaded>
+                		<!--New Additions Config_20210831+ -->
+                		<Image condition="is">C:\Windows\System32\lsass.exe</Image>
+				<!--New Additions Config_20220322+ -->
+				<ImageLoaded name="T1547.012 _ Print Spooler Exploit - PrintProcessor Directory" condition="begin with">C:\Windows\system32\spool\PRTPROCS</ImageLoaded>
+
+           		 </ImageLoad>
+			</RuleGroup>
+		<RuleGroup name="Event ID-7 Exclusion" groupRelation="or">
+			<ImageLoad onmatch="exclude">
+				<ImageLoaded condition="begin with">C:\ProgramData\Microsoft\Windows Defender\Platform\</ImageLoaded>
+				<Image condition="begin with">C:\Program Files (x86)\Tanium\Tanium Client\</Image>
+				<Image>C:\Program Files (x86)\Bradford Networks\Persistent Agent\bndaemon.exe</Image>
+				<Image>C:\Windows\SysWOW64\cscript.exe</Image>
+				<!--Noisey trusted processes-->
+				<!-- <Image condition="is">C:\Program Files (x86)\Microsoft Office\root\Office16\OUTLOOK.EXE</Image> -->
+				<Image condition="is">C:\Windows\System32\svchost.exe</Image>
+				<Image condition="end with">mscorsvw.exe</Image>
+				<Image condition="is">mstsc.exe</Image>
+				<!-- Full path " C:\Windows\Microsoft.NET\Framework64\v4.0.30319\mscorsvw.exe "-->
+				<!-- <Image condition="is">C:\Program Files\Microsoft Office\root\Office16\OUTLOOK.EXE</Image> -->
+				<Image condition="is">C:\Windows\Lenovo\ImController\PluginHost86\Lenovo.Modern.ImController.PluginHost.SettingsApp.exe</Image>
+				<Image condition="is">C:\Program Files\Microsoft Policy Platform\policyHost.exe</Image>
+				<Image condition="is">C:\Windows\System32\wbem\WmiApSrv.exe</Image>
+				<Image condition="is">C:\Windows\Lenovo\ImController\PluginHost86\Lenovo.Modern.ImController.PluginHost.Device.exe</Image>
+				<Image condition="is">C:\Windows\Lenovo\ImController\PluginHost86\Lenovo.Modern.ImController.PluginHost.CompanionApp.exe</Image>
+				<Image condition="end with">AppData\Local\Microsoft\OneDrive\OneDrive.exe</Image>
+				<ImageLoaded condition="end with">AppData\Local\Microsoft\Teams\Current\Teams.exe</ImageLoaded>
+				<ImageLoaded condition="end with">\Microsoft\Teams\stage\Teams.exe</ImageLoaded>
+				<ImageLoaded condition="end with">AppData\Local\Microsoft\Teams\Current\ffmpeg.dll</ImageLoaded>
+				<Image condition="is">C:\Windows\System32\regsvr32.exe</Image>
+				<Image condition="is">C:\Windows\SysWOW64\regsvr32.exe</Image>
+				<Image condition="is">C:\Windows\System32\en-US\schtasks.exe</Image>
+				<Image condition="is">C:\Windows\SysWOW64\en-US\schtasks.exe</Image>
+				<Image condition="is">C:\Windows\System32\schtasks.exe</Image>
+				<Image condition="is">C:\Windows\SysWOW64\schtasks.exe</Image>
+				<Image condition="is">C:\Windows\System32\wbem\WmiPrvSE.exe</Image>
+				<Image condition="is">C:\Windows\SysWOW64\wbem\WmiPrvSE.exe</Image>
+				<Image condition="is">C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe</Image>
+				<Image condition="is">C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell_ise.exe</Image>
+				<Image condition="is">C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</Image>
+				<Image condition="is">C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe</Image>
+				<Image condition="end with">\sources\setuphosts.exe</Image>
+				<Image condition="end with">\appdata\local\microsoft\teams\update.exe</Image>
+				<Image condition="is">C:\Windows\Microsoft.NET\Framework64\v4.0.30319\ngen.exe</Image>
+				<Image condition="is">C:\Windows\Microsoft.NET\Framework64\v4.0.30319\ngentask.exe</Image>
+				<Image condition="is">C:\Windows\Microsoft.NET\Framework\v4.0.30319\ngen.exe</Image>
+				<Image condition="is">C:\Windows\Microsoft.NET\Framework\v4.0.30319\ngentask.exe</Image>
+				<!--New Additions Config_20210316+ -->
+				<Image condition="is">C:\Program Files (x86)\UiPath\Studio\Robot JS Add-on\UiPath.RobotJS.UserHost.exe</Image>
+				<Image condition="is">C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe</Image>
+				<Image condition="is">C:\Program Files (x86)\Microsoft Office\root\Office16\SDXHelper.exe</Image>
+				<Image condition="is">C:\Program Files (x86)\Tanium\Tanium Client\TaniumClient.exe</Image>
+				<Image condition="begin with">C:\Windows\System32\DriverStore\FileRepository\</Image>
+				<Image condition="is">C:\Windows\System32\taskhostw.exe</Image>
+				<Image condition="is">C:\Program Files (x86)\Google\Update\GoogleUpdate.exe</Image>
+				<Image condition="is">C:\Windows\System32\RuntimeBroker.exe</Image>
+				<!--New Additions Config_20210326+ -->
+				<Image condition="is">C:\Windows\System32\SearchProtocolHost.exe</Image>
+				<Image condition="is">C:\Windows\CCM\SCToastNotification.exe</Image>
+				<Image condition="is">C:\Program Files\BOCTools\RestartReminder\Show-RestartReminder.exe</Image>
+				<Image condition="is">C:\Windows\System32\SearchFilterHost.exe</Image>
+				<Image condition="is">C:\Windows\CCM\CcmExec.exe</Image>
+				<Image condition="is">C:\Windows\System32\sppsvc.exe</Image>
+				<Image condition="is">C:\Program Files\Remote Desktop\msrdcw.exe</Image>
+				<Image condition="is">C:\Windows\System32\wbem\WMIC.exe</Image>
+				<!--New Additions Config_20210409+ -->
+				<Image condition="is">C:\Program Files\Common Files\microsoft shared\ClickToRun\officesvcmgr.exe</Image>
+				<Image condition="is">C:\Windows\CCM\SCNotification.exe</Image>
+				<Image condition="is">C:\Program Files (x86)\Microsoft Azure Information Protection\MSIP.ExecutionHost32.exe</Image>
+				<Image condition="is">C:\Program Files (x86)\Microsoft Office\root\Office16\msoia.exe</Image>
+				<!--New Additions Config_20210611+ -->
+				<Image condition="begin with">C:\Program Files (x86)\Lenovo\VantageService\</Image>
+				<Image condition="begin with">C:\Program Files\Common Files\TechSmith Shared\</Image>
+				<Image condition="is">C:\Program Files (x86)\KeePass Password Safe 2\KeePass.exe</Image>
+				<Image condition="is">C:\Windows\CCM\SensorLogonTask.exe</Image>
+				<Image condition="is">C:\Program Files\Common Files\RSA Shared\RSA .NET\RsaCardUtility.exe</Image>
+				<Image condition="is">C:\Windows\System32\msiexec.exe</Image>
+				<!--New Additions Config_20220322+ -->
+				<Image condition="is">UiPath.RobotJS.UserHost.exe</Image>
+				<Image condition="begin with">C:\Windows\Lenovo\ImController\PluginHost\</Image>
+				<Image condition="begin with">C:\Windows\Lenovo\ImController\Service\</Image>
+				<Image condition="begin with">C:\Program Files (x86)\Tanium\</Image>
+			</ImageLoad>
+		</RuleGroup>
+		<RuleGroup name="" groupRelation="or">
+			<CreateRemoteThread onmatch="exclude">
+				<!--New Additions Config_20210316+ -->
+				<SourceImage condition="is">C:\Program Files\VMware\VMware Tools\vmtoolsd.exe</SourceImage>
+				<!--New Additions Config_20210409+ -->
+				<SourceImage condition="is">C:\Windows\System32\csrss.exe</SourceImage>
+				<SourceImage condition="end with">\bin\idea64.exe</SourceImage>
+				<TargetImage condition="end with">Google\Chrome\Application\chrome.exe</TargetImage>
+				<SourceImage condition="is">C:\Windows\System32\wbem\WmiPrvSE.exe</SourceImage>
+				<SourceImage condition="is">C:\Windows\System32\svchost.exe</SourceImage>
+				<SourceImage condition="is">C:\Windows\System32\wininit.exe</SourceImage>
+				<SourceImage condition="is">C:\Windows\System32\services.exe</SourceImage>
+				<SourceImage condition="is">C:\Windows\System32\winlogon.exe</SourceImage>
+				<SourceImage condition="is">C:\Windows\System32\audiodg.exe</SourceImage>
+				<StartModule condition="is">C:\windows\system32\kernel32.dll</StartModule>
+			</CreateRemoteThread>
+		</RuleGroup>
+		<RuleGroup name="" groupRelation="or">
+			<!-- Event ID 9 == RawAccessRead. -->
+			<RawAccessRead onmatch="include"></RawAccessRead>
+		</RuleGroup>
+		<RuleGroup name="" groupRelation="or">
+			<!-- Event ID 10 == ProcessAccess. -->
+			<ProcessAccess onmatch="include">
+				<Rule name="Rubeus Monitor" groupRelation="and">
+					<GrantedAccess condition="is">0x1F3FFF</GrantedAccess>
+					<TargetImage condition="is">C:\Windows\system32\winlogon.exe</TargetImage>
+					<CallTrace condition="contains any">C:\Windows\Microsoft.NET;UNKNOWN</CallTrace>
+				</Rule>
+				<Rule name="T1003 _ Credential Dumping _ lsass.exe with UNKNOWN CallTrace" groupRelation="and">
+					<TargetImage condition="is">C:\Windows\system32\lsass.exe</TargetImage>
+					<CallTrace condition="contains">UNKNOWN</CallTrace>
+				</Rule>
+                		<Rule name="T1003 _ Credential Dumping _ lsass.exe with UNKNOWN CallTrace" groupRelation="and">
+					<TargetImage condition="is">C:\Windows\system32\lsass.exe</TargetImage>
+					<CallTrace condition="contains">dbghelp.dll</CallTrace>
+				</Rule>
+                		<Rule name="T1003 _ Credential Dumping _ lsass.exe with UNKNOWN CallTrace" groupRelation="and">
+					<TargetImage condition="is">C:\Windows\system32\lsass.exe</TargetImage>
+					<CallTrace condition="contains">dbgcore.dll</CallTrace>
+				</Rule>
+				<Rule name="T1003 _ Credential Dumping _ csrss.exe Granted Access 0x1F1FFF" groupRelation="and">
+					<TargetImage condition="is">C:\Windows\system32\csrss.exe</TargetImage>
+					<GrantedAccess>0x1F1FFF</GrantedAccess>
+				</Rule>
+				<Rule name="T1003 _ Credential Dumping _ wininit.exe Granted Access 0x1F1FFF" groupRelation="and">
+					<TargetImage condition="is">C:\Windows\system32\wininit.exe</TargetImage>
+					<GrantedAccess>0x1F1FFF</GrantedAccess>
+				</Rule>
+				<Rule name="T1003_Credential Dumping_winlogon.exe Granted Access 0x1F1FFF" groupRelation="and">
+					<TargetImage condition="is">C:\Windows\system32\winlogon.exe</TargetImage>
+					<GrantedAccess>0x1F1FFF</GrantedAccess>
+				</Rule>
+				<Rule name="T1003_Credential Dumping_services.exe Granted Access 0x1F1FFF" groupRelation="and">
+					<TargetImage condition="is">C:\Windows\system32\services.exe</TargetImage>
+					<GrantedAccess>0x1F1FFF</GrantedAccess>
+				</Rule>
+				<Rule name="T1003_Credential Dumping_lsass.exe Granted Access 0x1FFFFF" groupRelation="and">
+					<TargetImage condition="is">C:\Windows\system32\lsass.exe</TargetImage>
+					<GrantedAccess>0x1FFFFF</GrantedAccess>
+				</Rule>
+				<Rule name="T1003_Credential Dumping_lsass.exe Granted Access 0x1F1FFF" groupRelation="and">
+					<TargetImage condition="is">C:\Windows\system32\lsass.exe</TargetImage>
+					<GrantedAccess>0x1F1FFF</GrantedAccess>
+				</Rule>
+				<Rule name="T1003_Credential Dumping_lsass.exe Granted Access 0x143A" groupRelation="and">
+					<TargetImage condition="is">C:\Windows\system32\lsass.exe</TargetImage>
+					<GrantedAccess>0x143A</GrantedAccess>
+				</Rule>
+				<Rule name="T1003_Credential Dumping_lsass.exe Granted Access 0x1010" groupRelation="and">
+					<TargetImage condition="is">C:\Windows\system32\lsass.exe</TargetImage>
+					<GrantedAccess>0x1010</GrantedAccess>
+				</Rule>
+				<Rule name="T1055_Process Injection through Office" groupRelation="and">
+					<SourceImage condition="contains all">C:\Program Files;\Microsoft Office\Root\Office</SourceImage>
+					<CallTrace condition="contains">\Microsoft Shared\VBA</CallTrace>
+				</Rule>
+				<Rule name="T1059.001_PowerShell without Powershell" groupRelation="and">
+					<SourceImage condition="is not">C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</SourceImage>
+					<CallTrace condition="contains">System.Management.Automation.ni.dll</CallTrace>
+				</Rule>
+				<TargetImage name="T1055_Process Injection through Explorer.exe" condition="is">C:\Windows\system32\explorer.exe</TargetImage>
+				<GrantedAccess name="Defense Evasion - Possible Process Suspended" condition="is">0x800</GrantedAccess>
+				<!-- New Additions -->
+				<!--<Rule name="60 - T1088 _IIS Worker Rotten Potato" groupRelation="and">
+					<SourceImage condition="end with">w3wp.exe</SourceImage>
+					<GrantedAccess>0x1FFFFF</GrantedAccess>
+				</Rule>-->
+				<!--<Rule name="64 - T1088 _UAC Bypass Event Viewer" groupRelation="and">
+					<TargetImage condition="end with">eventvwr.exe</TargetImage>
+					<GrantedAccess>0x1FFFFF</GrantedAccess>
+				</Rule>-->
+				<!--<Rule name="65 - T1088 _UAC Bypass SDCLT" groupRelation="and">
+					<TargetImage condition="end with">sdclt.exe</TargetImage>
+					<GrantedAccess>0x1FFFFF</GrantedAccess>
+				</Rule>-->
+				<TargetImage condition="end with">\firefox.exe</TargetImage>
+				<TargetImage condition="end with">\chrome.exe</TargetImage>
+				<TargetImage condition="end with">\msedge.exe</TargetImage>
+				<TargetImage condition="end with">\teams.exe</TargetImage>
+				<TargetImage condition="end with">\SCNotification.exe</TargetImage>
+				<TargetImage condition="end with">\RsaCardUtility.exe</TargetImage>
+				<CallTrace name="Process with UNKNOWN Call Trace" condition="contains">UNKNOWN</CallTrace>
+				<CallTrace name="Process with ? Call Trace" condition="is">?</CallTrace>
+				<Rule name="T1111 - Process Injection into DLLhost" groupRelation="and">
+					<SourceImage condition="excludes any">C:\windows\system32\csrss.exe;C:\windows\system32\svchost.exe;C:\windows\system32\btservice.exe</SourceImage>
+					<TargetImage condition="end with">dllhost.exe</TargetImage>
+				</Rule>
+				<Rule name="Granted Access 0x143A" groupRelation="and">
+					<TargetImage condition="is not">C:\Program Files\VMware\VMware Tools\vmtoolsd.exe</TargetImage>
+					<GrantedAccess>0x143A</GrantedAccess>
+				</Rule>
+				<Rule name="T1111 - Duplicate handle of winlogon.exe" groupRelation="and">
+					<SourceImage condition="excludes any">C:\windows\system32\svchost.exe;C:\windows\system32\btservice.exe</SourceImage>
+					<TargetImage condition="end with">winlogon.exe</TargetImage>
+					<GrantedAccess>0x40</GrantedAccess>
+				</Rule>
+                		<GrantedAccess name="Defense Evasion - Process Cloning" condition="is">0x80</GrantedAccess>
+			</ProcessAccess>
+		</RuleGroup>
+		<RuleGroup name="" groupRelation="or">
+			<ProcessAccess onmatch="exclude">
+				<SourceImage condition="is">C:\Program Files (x86)\Tanium\Tanium Client\TaniumClient.exe</SourceImage>
+                		<SourceImage condition="is">C:\Program Files (x86)\Druide\Antidote 9\Application\Bin64\AgentAntidote.exe</SourceImage>
+                		<SourceImage condition="contains">\MobaXterm</SourceImage>
+				<SourceImage condition="is">C:\Program Files (x86)\Microsoft Office\root\VFS\ProgramFilesCommonX86\Microsoft Shared\DW\DW20.EXE</SourceImage>
+				<SourceImage condition="is">C:\Program Files\Splunk\bin\splunkd.exe</SourceImage>
+				<TargetImage condition="is">C:\Windows\Sysmon.exe</TargetImage>
+				<TargetImage condition="is">C:\Windows\Sysmon64.exe</TargetImage>
+				<SourceImage condition="is">C:\Windows\Sysmon64.exe</SourceImage>
+				<TargetImage condition="begin with">C:\ProgramData\Microsoft\Windows Defender\platform\</TargetImage>
+				<SourceImage condition="begin with">C:\ProgramData\Microsoft\Windows Defender\platform\</SourceImage>
+				<SourceImage condition="begin with">C:\Program Files (x86)\Tanium\Tanium Client\</SourceImage>
+				<SourceImage condition="end with">AppData\Local\Microsoft\Teams\current\Teams.exe</SourceImage>
+				<SourceImage condition="end with">clickshare_native.exe</SourceImage>
+				<SourceImage condition="end with">\Services\Microsoft.VisualStudio.Setup.Service\VSIXAutoUpdate.exe</SourceImage>
+				<TargetImage condition="is">C:\Program Files\Windows Defender\MsMPEng.exe</TargetImage>
+				<SourceImage condition="end with">\syswow64\cscript.exe</SourceImage>
+				<SourceImage condition="end with">\syswow64\werfault.exe</SourceImage>
+				<SourceImage condition="end with">\Emc.Captiva.WebCaptureService.exe</SourceImage>
+				<SourceImage condition="is">C:\WINDOWS\sysWOW64\wbem\wmiprvse.exe</SourceImage>
+				<SourceImage condition="is">C:\WINDOWS\system32\wbem\wmiprvse.exe</SourceImage>
+				<SourceImage condition="is">C:\Windows\syswow64\MsiExec.exe</SourceImage>
+				<SourceImage condition="begin with">C:\Program Files (x86)\Cisco\Cisco AnyConnect Secure Mobility Client\</SourceImage>
+				<SourceImage condition="is">C:\Program Files (x86)\Google\Update\GoogleUpdate.exe</SourceImage>
+				<SourceImage condition="is">C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe</SourceImage>
+				<SourceImage condition="is">C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe</SourceImage>
+				<SourceImage condition="is">C:\WINDOWS\system32\wermgr.exe</SourceImage>
+				<SourceImage name="T1055_Process Injection Explorer through RealTek Driver RtkAudUService64.exe" condition="is">C:\Windows\System32\RtkAudUService64.exe</SourceImage>
+				<SourceImage condition="is">C:\WINDOWS\system32\svchost.exe</SourceImage>
+				<SourceImage condition="is">C:\Program Files (x86)\DeviceLock\DeviceLock Agent\DLService.exe</SourceImage>
+				<SourceImage condition="is">C:\WINDOWS\Explorer.EXE</SourceImage>
+				<SourceImage condition="is">C:\Users\bakh\AppData\Local\Programs\Microsoft VS Code\Code.exe</SourceImage>
+				<SourceImage condition="is">C:\Program Files\Microsoft VS Code\Code.exe</SourceImage>
+				<SourceImage condition="is">C:\WINDOWS\CCM\CcmExec.exe</SourceImage>
+				<SourceImage condition="is">C:\WINDOWS\system32\csrss.exe</SourceImage>
+				<SourceImage condition="is">C:\WINDOWS\system32\btservice.exe</SourceImage>
+				<SourceImage condition="is">C:\Program Files\Mozilla Firefox\firefox.exe</SourceImage>
+				<SourceImage condition="is">C:\WINDOWS\System32\DriverStore\FileRepository\wtabletserviceisd.inf_amd64_ac7d1df1df7a9475\WTabletServiceISD.exe</SourceImage>
+				<SourceImage condition="is">C:\Program Files (x86)\VMware\VMware Workstation\vmware-unity-elper.exe</SourceImage>
+				<SourceImage condition="is">C:\Program Files (x86)\VMware\VMware Workstation\vmware-authd.exe</SourceImage>
+				<!--New Additions Config_20210316+ -->
+				<SourceImage condition="end with">\nodejs\node.exe</SourceImage>
+				<SourceImage condition="contains">\AppData\Local\Thomson Reuters\Eikon</SourceImage>
+				<SourceImage condition="end with">\Microsoft VS Code\Code.exe</SourceImage>
+				<SourceImage condition="end with">\bin\Microsoft.ConfigurationManagement.exe</SourceImage>
+				<SourceImage condition="is">C:\Program Files\VMware\VMware Tools\vmtoolsd.exe</SourceImage>
+				<SourceImage condition="is">C:\WINDOWS\CCM\SensorLogonTask.exe</SourceImage>
+				<SourceImage condition="is">C:\WINDOWS\system32\taskmgr.exe</SourceImage>
+				<SourceImage condition="end with">\bin\idea64.exe</SourceImage>
+				<SourceImage condition="is">C:\Program Files (x86)\Eaton\UPSCompanion\mc2.exe</SourceImage>
+				<SourceImage condition="is">C:\Program Files (x86)\Adobe\Acrobat Reader DC\Reader\AcroCEFAcroServicesUpdater.exe</SourceImage>
+				<SourceImage condition="is">C:\Program Files (x86)\Adobe\Acrobat Reader DC\Reader\AcroCEF\RdrServicesUpdater.exe</SourceImage>
+				<SourceImage condition="end with">\LibraryCache\Apps\TR.OFFICE.CORE\4.0.37.3\Bin\TRUserServiceHostV4.exe</SourceImage>
+				<SourceImage condition="is">C:\Program Files\Adobe\Adobe Creative Cloud Experience\libs\node.exe</SourceImage>
+				<!--New Additions Config_20210326+ -->
+				<SourceImage condition="is">C:\Program Files (x86)\Thomson Reuters\Eikon\X\Bin\EikonBoxNet.exe</SourceImage>
+				<SourceImage condition="is">C:\WINDOWS\Lenovo\ImController\Service\Lenovo.Modern.ImController.exe</SourceImage>
+				<SourceImage condition="is">C:\WINDOWS\system32\AUDIODG.EXE</SourceImage>
+				<SourceImage condition="is">C:\Program Files (x86)\TeamMate\Bin\TeamMate.exe</SourceImage>
+				<SourceImage condition="is">C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe</SourceImage>
+				<SourceImage condition="is">C:\WINDOWS\system32\msiexec.exe</SourceImage>
+				<!--New Additions Config_20210409+ -->
+				<SourceImage condition="is">C:\Windows\Microsoft.NET\Framework\v4.0.30319\NGenTask.exe</SourceImage>
+				<SourceImage condition="begin with">C:\Program Files (x86)\Thomson Reuters\Eikon\</SourceImage>
+				<SourceImage condition="begin with">C:\WINDOWS\System32\DriverStore\FileRepository\</SourceImage>
+				<TargetImage condition="is">C:\Windows\Microsoft.NET\Framework\v4.0.30319\NGenTask.exe</TargetImage>
+				<SourceImage condition="is">C:\Program Files (x86)\Google\Chrome\Application\chrome.exe</SourceImage>
+				<SourceImage condition="is">C:\WINDOWS\system32\lpksetup.exe</SourceImage>
+				<SourceImage condition="is">C:\Windows\System32\RuntimeBroker.exe</SourceImage>
+				<SourceImage condition="is">C:\Program Files (x86)\Adobe\Acrobat Reader DC\Reader\AcroRd32.exe</SourceImage>
+				<SourceImage condition="is">C:\Program Files (x86)\Adobe\Acrobat DC\Acrobat\Acrobat.exe</SourceImage>
+				<SourceImage condition="end with">\AppData\Local\Mozilla Firefox\firefox.ex</SourceImage>
+				<!--New Additions Config_20210603+ -->
+				<SourceImage condition="is">C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE</SourceImage>
+				<SourceImage condition="end with">\bin\phpstorm64.exe</SourceImage>
+				<SourceImage condition="is">C:\blp\Wintrv\wintrv.exe</SourceImage>
+				<SourceImage condition="is">C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell_ise.exe</SourceImage>
+				<SourceImage condition="is">C:\Program Files (x86)\VMware\VMware Workstation\vmware-unity-helper.exe</SourceImage>
+				<Rule name="AllowList for Office Apps with 0x40 GrantedAccess" groupRelation="and">
+					<SourceImage condition="begin with">C:\Program Files (x86)\Microsoft Office\root\Office16\</SourceImage>
+					<GrantedAccess>0x40</GrantedAccess>
+				</Rule>
+				<!--New Additions Config_20210611+ -->
+				<SourceImage condition="end with">\Application\Bin64\AgentConnectix.exe</SourceImage>
+				<SourceImage condition="end with">\appdata\local\webex\webex\meetings\WebexMTA.exe</SourceImage>
+				<SourceImage condition="end with">C:\Program Files (x86)\Common Files\Adobe\AdobeGCClient\AGMService.exe</SourceImage>
+				<SourceImage condition="end with">C:\Program Files (x86)\Common Files\Adobe\ARM\1.0\AdobeARM.exe</SourceImage>
+				<Rule name="AllowList for LSASS accessing Teams" groupRelation="and">
+					<SourceImage condition="is">C:\WINDOWS\system32\lsass.exe</SourceImage>
+					<TargetImage condition="end with">\AppData\Local\Microsoft\Teams\current\Teams.exe</TargetImage>
+				</Rule>
+				<!--New Additions Config_20220322+ -->
+				<SourceImage condition="is">C:\Program Files (x86)\Druide\Antidote 9\Application\Bin64\AgentAntidote.exe</SourceImage>
+				<SourceImage condition="is">C:\WINDOWS\system32\SndVol.exe</SourceImage>
+				<SourceImage condition="is">C:\Program Files (x86)\Common Files\Nuance\NaturallySpeaking15\dgnuiasvr.exe</SourceImage>
+				<SourceImage condition="is">C:\Program Files\Windows Defender\MsMpEng.exe</SourceImage>
+				<SourceImage condition="is">C:\Program Files (x86)\Common Files\Adobe\Adobe Desktop Common\HDBox\Setup.exe</SourceImage>
+				<SourceImage condition="end with">MobaXterm.exe</SourceImage>
+			</ProcessAccess>
+		</RuleGroup>
+		<RuleGroup name="" groupRelation="or">
+			<!-- Event ID 11 == FileCreate. -->
+			<FileCreate onmatch="include">
+				<Rule name="T1547 _ Persistence in userland with .lnk" groupRelation="and">
+					<TargetFilename condition="end with">.lnk</TargetFilename>
+					<TargetFilename condition="contains">\Start Menu</TargetFilename>
+				</Rule>
+				<Rule name="T1547 _ Persistence in userland with .url" groupRelation="and">
+					<TargetFilename condition="end with">.url</TargetFilename>
+					<TargetFilename condition="contains">\Start Menu</TargetFilename>
+				</Rule>
+				<TargetFilename name="T1546.011 _ Application Shimming" condition="contains">C:\Windows\AppPatch\Custom</TargetFilename>
+				<TargetFilename name="T1059 _ File Created .bat _ Batch File " condition="end with">.bat</TargetFilename>
+				<TargetFilename name="T1059 _ File Created .cmd _ Batch File " condition="end with">.cmd</TargetFilename>
+				<TargetFilename name="T1059 _ File Created .chm _ Compressed HTML File " condition="end with">.chm</TargetFilename>
+				<TargetFilename name="T1059 _ File Created .hta _ HTML Application File " condition="end with">.hta</TargetFilename>
+				<TargetFilename name="T1218 _ File Created AppData\Local\Microsoft\CLR_v2.0\UsageLogs\ _ Office Signed Binary Proxy Execution" condition="contains">AppData\Local\Microsoft\CLR_v2.0\UsageLogs\</TargetFilename>
+				<TargetFilename name="T1218 _ File Created cscript.exe.log _ Office Signed Binary Proxy Execution" condition="end with">\UsageLogs\cscript.exe.log</TargetFilename>
+				<TargetFilename name="T1218 _ File Created wscript.exe.log _ Office Signed Binary Proxy Execution" condition="end with">\UsageLogs\wscript.exe.log</TargetFilename>
+				<TargetFilename name="T1218 _File Created wmic.exe.log _ Office Signed Binary Proxy Execution" condition="end with">\UsageLogs\wmic.exe.log</TargetFilename>
+				<TargetFilename name="T1218 _ File Created mshta.exe.log _ Office Signed Binary Proxy Execution" condition="end with">\UsageLogs\mshta.exe.log</TargetFilename>
+				<TargetFilename name="T1218 _ File Created svchost.exe.log _ Office Signed Binary Proxy Execution" condition="end with">\UsageLogs\svchost.exe.log</TargetFilename>
+				<TargetFilename name="T1218 _ File Created regsvr32.exe.log _ Office Signed Binary Proxy Execution" condition="end with">\UsageLogs\regsvr32.exe.log</TargetFilename>
+				<TargetFilename name="T1218 _ File Created rundll32.exe.log _ Office Signed Binary Proxy Execution" condition="end with">\UsageLogs\rundll32.exe.log</TargetFilename>
+				<TargetFilename name="T1187 _ File Created .scf _ Forced Authentication" condition="end with">.scf</TargetFilename>
+				<TargetFilename name="T1127 _ File Created .proj _ Trusted Developer Utilities Proxy Execution" condition="end with">.*proj</TargetFilename>
+				<TargetFilename name="T1127 _ File Created .sln _ Trusted Developer Utilities Proxy Execution" condition="end with">.sln</TargetFilename>
+				<TargetFilename name="T1059.001 _ File Created _ PowerShell" condition="begin with">C:\Windows\System32\WindowsPowerShell</TargetFilename>
+				<TargetFilename name="T1059.001 _ File Created _ PowerShell" condition="begin with">C:\Windows\SysWOW64\WindowsPowerShell</TargetFilename>
+				<TargetFilename name="T1059.001 _ File Created .ps2 _ PowerShell" condition="end with">.ps2</TargetFilename>
+				<TargetFilename name="T1546.008 _ File Created C:\Program\_Services File Permissions Weakness" condition="begin with">C:\Program\</TargetFilename>
+				<TargetFilename name="T1047 _ File Created C:\PerfLogs\_File System Permissions Weakness" condition="begin with">C:\PerfLogs\</TargetFilename>
+				<TargetFilename name="T1047 _ File Created C:\Users\Public\_File System Permissions Weakness" condition="begin with">C:\Users\Public\</TargetFilename>
+				<TargetFilename name="T1047 _ File Created \AppData\Local\Temp\_File System Permissions Weakness" condition="contains">\AppData\Local\Temp\</TargetFilename>
+				<TargetFilename name="T1547 _ File Created \Start Menu\ _ Userland persistence" condition="contains">\Start Menu</TargetFilename>
+				<TargetFilename name="T1547 _ File Created \Startup\ _ Userland persistence" condition="contains">\Startup</TargetFilename>
+				<TargetFilename name="T1053.005 _ File Created C:\Windows\System32\Tasks _ Scheduled Task Created" condition="begin with">C:\Windows\System32\Tasks</TargetFilename>
+				<TargetFilename name="T1053.005 _ File Created C:\Windows\Tasks\ _ Scheduled Task Created" condition="begin with">C:\Windows\Tasks\</TargetFilename>
+				<TargetFilename name="T1547 _ Persistence_File Created _ C:\Windows\System32\GroupPolicy\Machine\Scripts " condition="begin with">C:\Windows\System32\GroupPolicy\Machine\Scripts</TargetFilename>
+				<TargetFilename name="T1547 _ Persistence_File Created _ C:\Windows\System32\GroupPolicy\User\Scripts" condition="begin with">C:\Windows\System32\GroupPolicy\User\Scripts</TargetFilename>
+				<TargetFilename name="File Created _ C:\Users\Default " condition="begin with">C:\Users\Default</TargetFilename>
+				<TargetFilename name="File Created _ Downloads Folder" condition="contains">\Downloads\</TargetFilename>
+				<TargetFilename name="File Created from outlook" condition="contains">\Content.Outlook\</TargetFilename>
+				<TargetFilename name="T1204 _ File Created .iqy _ Web Query File" condition="end with">.iqy</TargetFilename>
+				<TargetFilename name="T1204 _ File Created .slk _ Symbolic Link File" condition="end with">.slk</TargetFilename>
+				<TargetFilename name="T1204 _ File Created .rft _ Rich Text Document" condition="end with">.rft</TargetFilename>
+				<TargetFilename name="T1204 _ File Created .jsp _ JavaServer Pages File" condition="end with">.jsp</TargetFilename>
+				<TargetFilename name="T1204 _ File Created .jspx _ XML JavaServer Pages File" condition="end with">.jspx</TargetFilename>
+				<TargetFilename name="T1204 _ File Created .asp _ Active Server Pages File" condition="end with">.asp</TargetFilename>
+				<TargetFilename name="T1204 _ File Created .aspx _ XML Active Server Pages File" condition="end with">.aspx</TargetFilename>
+				<TargetFilename name="T1204 _ File Created .php _ PHP File" condition="end with">.php</TargetFilename>
+				<TargetFilename name="T1204 _ File Created .war _ WAR File" condition="end with">.war</TargetFilename>
+				<TargetFilename name="T1218 _ File Created .cpl _ Control Panel" condition="end with">.cpl</TargetFilename>
+				<TargetFilename name="T1204 _ File Created .ace _ .ACE Compressed File" condition="end with">.ace</TargetFilename>
+				<TargetFilename name="T1204 _ File Created .exe _ Executable File" condition="end with">.exe</TargetFilename>
+				<TargetFilename name="T1558.003 _ File Created .kirbi _ Kerberoast File" condition="end with">.kirbi</TargetFilename>
+				<TargetFilename name="T1204 _ File Created .application _ ClickOnce Broswer Application File" condition="end with">.application</TargetFilename>
+				<TargetFilename name="T1204 _ File Created .appref-ms _ ClickOnce Broswer Application File" condition="end with">.appref-ms</TargetFilename>
+				<TargetFilename name="T1059 _ File Created .py _ Python File" condition="end with">.py</TargetFilename>
+                		<TargetFilename name="T1059 _ File Created .pyd _ Python File" condition="end with">.pyd</TargetFilename>
+                		<TargetFilename name="T1059 _ File Created .pyi _ Python File" condition="end with">.pyi</TargetFilename>
+				<TargetFilename name="T1059 _ File Created .pyc _ Python File" condition="end with">.pyc</TargetFilename>
+				<TargetFilename name="T1059 _ File Created .pyw _ Python File" condition="end with">.pyw</TargetFilename>
+				<TargetFilename name="T1204 _ File Created .sys _ MS-DOS File" condition="end with">.sys</TargetFilename>
+				<TargetFilename name="T1547.009 _ File Created .url _ Browser Shortcut File" condition="end with">.url</TargetFilename>
+				<TargetFilename name="T1547.009 _ File Created .lnk _ Browser Shortcut File" condition="end with">.lnk</TargetFilename>
+				<TargetFilename name="T1059 _ File Created .vb _ VisualBasic File" condition="end with">.vb</TargetFilename>
+				<TargetFilename name="T1059 _ File Created .vbe _ VBScript File" condition="end with">.vbe</TargetFilename>
+				<TargetFilename name="T1059 _ File Created .vbs _ VBScript File" condition="end with">.vbs</TargetFilename>
+				<TargetFilename name="T1560 _ File Created .rar _ Compressed File" condition="end with">.rar</TargetFilename>
+				<TargetFilename name="T1560 _ File Created .zip _ Compressed File" condition="end with">.zip</TargetFilename>
+				<TargetFilename name="T1560 _ File Created .7z _ Compressed File" condition="end with">.7z</TargetFilename>
+				<TargetFilename name="T1574.002 _ File Created .dll _ DLL image File" condition="end with">.dll</TargetFilename>
+				<TargetFilename name="T1059 _ File Created .cs _ CSharp File" condition="end with">.cs</TargetFilename>
+				<TargetFilename name="T1059 _ File Created .js _ Javascript File" condition="end with">.js</TargetFilename>
+				<TargetFilename name="T1059 _ File Created .jse _ Javascript File" condition="end with">.jse</TargetFilename>
+				<TargetFilename name="T1204 _ File Created .mof _ Managed Object Format File" condition="end with">.mof</TargetFilename>
+				<TargetFilename name="66 - 1088 _ File Created _ UAC Bypass Wscript" condition="end with">wscript.exe.manifest</TargetFilename>
+				<!--New Additions Config_20210316+ -->
+				<!--<TargetFilename name="T1204 _ File Created .conf _ Configuration File" condition="end with">.conf</TargetFilename>-->
+				<!--New Additions Config_20210409+ -->
+				<TargetFilename name="T1003 _ File Created _ LSASS Minidump File" condition="end with">Temp\debug.bin</TargetFilename>
+				<!--<TargetFilename name="T1003 _ File Created _ bin File" condition="end with">.bin</TargetFilename>-->
+				<Image name="T1204 _ File Created from .sys Driver" condition="end with">.sys</Image>
+                		<!--New Additions Config_20210831+ -->
+                		<TargetFilename name="T1204 _ File Created .slk _Symbolic Link File" condition="end with">.slk</TargetFilename>
+                		<TargetFilename name="T1204 _ File Created .cpl _ Control Panel File" condition="end with">.cpl</TargetFilename>
+			    	<TargetFilename name="T1204 _ File Created _ Image archive file" condition="end with">.img</TargetFilename>
+                		<TargetFilename name="T1204 _ File Created _ Image archive file" condition="end with">.iso</TargetFilename>
+				<!--New Additions Config_20210903+ (Office file types) -->
+                		<TargetFilename name="T1204 _ File Created .dotx _ Word Document" condition="end with">.dotx</TargetFilename>
+				<TargetFilename name="T1204 _ File Created .docm _ Word Document" condition="end with">.docm</TargetFilename>
+				<TargetFilename name="T1204 _ File Created .dotm _ Word Document" condition="end with">.dotm</TargetFilename>
+				<TargetFilename name="T1204 _ File Created .dot _ Word Document" condition="end with">.dot</TargetFilename>
+				<TargetFilename name="T1204 _ File Created .doc _ Word Document" condition="end with">.doc</TargetFilename>
+				<TargetFilename name="T1204 _ File Created .doc _ Word Document" condition="end with">.docx</TargetFilename>
+				<TargetFilename name="T1204 _ File Created .xlsm _ Excel Document" condition="end with">.xlsm</TargetFilename>
+				<TargetFilename name="T1204 _ File Created .xlm _ Excel Document" condition="end with">.xlm</TargetFilename>
+				<TargetFilename name="T1204 _ File Created .xls _ Excel Document" condition="end with">.xls</TargetFilename>
+				<TargetFilename name="T1204 _ File Created .xlt _ Excel Document" condition="end with">.xlt</TargetFilename>
+				<TargetFilename name="T1204 _ File Created .xltm _ Excel Document" condition="end with">.xltm</TargetFilename>
+				<TargetFilename name="T1204 _ File Created .xlsb _ Excel Document" condition="end with">.xlsb</TargetFilename>
+				<TargetFilename name="T1204 _ File Created .xlam _ Excel Document" condition="end with">.xlam</TargetFilename>
+				<TargetFilename name="T1204 _ File Created .xla _ Excel Document" condition="end with">.xla</TargetFilename>
+				<TargetFilename name="T1204 _ File Created .potm _ Macro PowerPoint" condition="end with">.potm</TargetFilename>
+				<TargetFilename name="T1204 _ File Created .ppsm _ PowerPoint Document" condition="end with">.ppsm</TargetFilename>
+				<TargetFilename name="T1204 _ File Created .sldm _ PowerPoint Document" condition="end with">.sldm</TargetFilename>
+				<TargetFilename name="T1204 _ File Created .pptm _ PowerPoint Document" condition="end with">.pptm</TargetFilename>
+				<TargetFilename name="T1204 _ File Created .xll _ MSFT Add-In" condition="end with">.xll</TargetFilename>
+				<TargetFilename name="T1204 _ File Created .wll _ MSFT Add-In" condition="end with">.wll</TargetFilename>
+				<!--New Additions Config_20210908+ -->
+				<TargetFilename name="T1204 _ File Created .daa _ Direct Access Archive File" condition="end with">.daa</TargetFilename>
+				<!--New Additions Config_20220228+ -->
+				<TargetFilename name="T1204 _ File Created .appx _ Windows Application Package " condition="end with">.appx</TargetFilename>
+				<TargetFilename name="T1204 _ File Created .config _ Configuration File" condition="end with">.config</TargetFilename>
+				<TargetFilename name="T1204 _ File Created .msi _ Windows Install Package " condition="end with">.msi</TargetFilename>
+				<TargetFilename name="T1204 _ File Created .pyd _ Python file" condition="end with">.pyd</TargetFilename>
+				<TargetFilename name="T1204 _ File Created .pyi _ Python file" condition="end with">.pyi</TargetFilename>
+				<!--New Additions Config_20220322+ -->
+				<TargetFilename name="T1204 _ File Created .lua _ lua source code file " condition="end with">.lua</TargetFilename>
+				<TargetFilename name="T1204 _ File Created .ocx _ reusable software module" condition="end with">.ocx</TargetFilename>
+				<TargetFilename name="T1059 _ hash of .vsto _ Visual Studio Tools for Office " condition="end with">.vsto</TargetFilename>
+
+
+            	</FileCreate>
+		</RuleGroup>
+		<RuleGroup name="Event ID-11 Exclusion" groupRelation="or">
+			<FileCreate onmatch="exclude">
+				<Image condition="is">C:\WINDOWS\system32\wbem\wmiprvse.exe</Image>
+				<Image condition="is">C:\Windows\ccmcache\g\DisplayLinkCore_92M1.exe</Image>
+				<Image condition="is">C:\WINDOWS\CCM\CcmExec.exe</Image>
+				<Image condition="is">C:\WINDOWS\SoftwareDistribution\Download\Install\AM_Delta_Patch_1.323.1306.0.exe</Image>
+				<Image condition="is">C:\WINDOWS\SoftwareDistribution\Download\Install\AM_Delta_Patch_1.323.1437.0.exe</Image>
+				<Image condition="is">C:\PROGRA~2\Webex\Webex\APPLIC~1\ptUpdate.exe</Image>
+				<Image condition="is">C:\Program Files (x86)\Microsoft Office\root\vfs\ProgramFilesCommonx86\Microsoft Shared\Office16\OLicenseHeartbeat.exe</Image>
+				<Image condition="is">C:\Users\dubc\AppData\Local\Temp\33DA5970-C8ED-4025-BE70-7D106AC5D8E8\courgette.exe</Image>
+				<Image condition="is">C:\WINDOWS\SoftwareDistribution\Download\Install\AM_Delta_Patch_1.323.1287.0.exe</Image>
+				<Image condition="is">C:\Users\lems\AppData\Local\Microsoft\Teams\current\Teams.exe</Image>
+				<Image condition="is">C:\WINDOWS\ccmcache\2\PBDeployShortcut.exe</Image>
+				<Image condition="is">C:\WINDOWS\SoftwareDistribution\Download\Install\AM_Delta_Patch_1.323.1448.0.exe</Image>
+				<Image condition="is">C:\WINDOWS\system32\reg.exe</Image>
+				<Image condition="is">C:\Program Files (x86)\Microsoft Office\root\Office16\ONENOTE.EXE</Image>
+				<Image condition="is">C:\WINDOWS\system32\imcontroller.infinstaller.exe</Image>
+				<Image condition="is">C:\WINDOWS\Microsoft.NET\Framework\v3.0\Windows Communication Foundation\SMConfigInstaller.exe</Image>
+				<Image condition="is">C:\Program Files (x86)\blp\API\Office Tools\instadd.exe</Image>
+				<Image condition="is">C:\Program Files (x86)\Cisco Systems\Cisco IP Communicator\CDP\CDPinstall.exe</Image>
+				<Image condition="is">C:\Program Files (x86)\Microsoft Office\Root\Office16\lynchtmlconv.exe</Image>
+				<Image condition="is">C:\WINDOWS\System32\svchost.exe</Image>
+				<Image condition="is">C:\WINDOWS\Syswow64\svchost.exe</Image>
+				<Image condition="begin with">C:\Program Files (x86)\Tanium\Tanium</Image>
+				<Image condition="end with">\msiexec.exe</Image>
+				<Image condition="end with">\MpSigStub.exe</Image>
+				<TargetFilename condition="begin with">C:\Program Files (x86)\Tanium\Tanium Client\</TargetFilename>
+				<TargetFilename condition="end with">.cdxml</TargetFilename>
+				<TargetFilename condition="end with">\StartupProfileData-NonInteractive</TargetFilename>
+				<TargetFilename condition="end with">\StartupProfileData-Interactive</TargetFilename>
+				<Image condition="is">C:\Program Files\Remote Desktop\msrdcw.exe</Image>
+				<TargetFilename condition="end with">AppData\Roaming\Microsoft\Teams\SkypeRT\ul.conf</TargetFilename>
+				<!--New Additions Config_20210316+ -->
+				<Image condition="is">C:\Program Files\nodejs\node.exe</Image>
+				<Image condition="is">C:\Windows\SystemApps\Microsoft.Windows.Cortana</Image>
+				<Image condition="is">C:\Program Files (x86)\Eaton\UPSCompanion\mc2.exe</Image>
+				<Image condition="begin with">\Webex\Plugins\ptUpdate.exe</Image>
+				<Image condition="begin with">\bin\java.exe</Image>
+				<Image condition="is">C:\Program Files (x86)\Adobe\Acrobat Reader DC\Reader\AcroCEF\RdrServicesUpdater.exe</Image>
+				<Image condition="is">C:\Program Files (x86)\Adobe\Acrobat DC\Acrobat\AcroCEF\AcroServicesUpdater.exe</Image>
+				<Image condition="is">C:\Program Files (x86)\Common Files\Adobe\Adobe Desktop Common\HDBox\Setup.exe</Image>
+				<Image condition="is">C:\Program Files (x86)\JetBrains\IntelliJ IDEA 2020.1.2\bin\idea64.exe</Image>
+				<Image condition="is">C:\Program Files\Tableau\Tableau 2019.2\bin\tableau.exe</Image>
+				<Image condition="is">C:\Program Files\TechSmith\Snagit 2018\snagiteditor.exe</Image>
+				<Image condition="begin with">C:\ProgramData\Microsoft\Windows Defender\platform\</Image>
+				<TargetFilename condition="begin with">C:\ProgramData\Cisco\Cisco AnyConnect Secure Mobility Client\</TargetFilename>
+				<!--New Additions Config_20210326+ -->
+				<Rule groupRelation="and">
+				 <Image condition="end with">powershell.exe</Image>
+				 <TargetFilename condition="end with">provider.dll</TargetFilename>
+				</Rule>
+				<!--New Additions Config_20210409+ -->
+				<TargetFilename condition="end with">prefs-1.js</TargetFilename>
+				<Image condition="begin with">C:\Program Files (x86)\Google\Chrome\Temp\source</Image>
+				<Image condition="begin with">C:\Program Files (x86)\Microsoft\Edge\Temp\source</Image>
+				<TargetFilename condition="contains">\AppData\Local\Microsoft\IdentityCache\1\</TargetFilename>
+				<!--New Additions Config_20210603+ -->
+				<Image condition="is">C:\Program Files (x86)\Mozilla Maintenance Service\update\updater.exe</Image>
+				<Image condition="is">C:\Program Files\BOCTools\RestartReminder\Show-RestartReminder.exe</Image>
+				<Image condition="end with">\Bin\EikonBox.exe</Image>
+				<Image condition="end with">\Bin\EikonDM.exe</Image>
+				<TargetFilename condition="begin with">C:\Program Files (x86)\Microsoft Office\Updates\Download\PackageFiles\</TargetFilename>
+				<!--New Additions Config_20220322+ -->
+				<Image condition="is">C:\WINDOWS\SysWOW64\SearchProtocolHost.exe</Image>
+				<Image condition="is">C:\Program Files (x86)\blp\Wintrv\bplus.wtk2.exe</Image>
+				<Image condition="is">C:\Program Files (x86)\blp\Wintrv\wintrv.exe</Image>
+				<Image condition="begin with">C:\WINDOWS\Lenovo\iMController\PluginHost</Image>
+			</FileCreate>
+		</RuleGroup>
+		<RuleGroup name="" groupRelation="or">
+			<!-- Event ID 12,13,14 == RegObject added/deleted, RegValue Set, RegObject Renamed. -->
+			<RegistryEvent onmatch="include">
+				<!-- New Additions -->
+				<TargetObject name="47 - T1122 _ Peristence _ Firefox COM Hijacking" condition="begin with">HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Profiles\{6ACC3724-ED52-4080-9712-AD6B9F4CD7E3}</TargetObject>
+				<TargetObject name="48 - T1122 _ Persistence _ Turla Outlook Backdoor COMhijack" condition="begin with">HKU\S-1-5-21-3583694148-1414552638-2922671848-1000_CLASSES\CLSID\{84DA0A92-25E0-11D3-B9F7-00C04F4C8F5D}</TargetObject>
+				<TargetObject name="48 - T1122 _ Persistence _ Turla Outlook Backdoor COMhijack" condition="begin with">HKU\S-1-5-21-3583694148-1414552638-2922671848-1000_CLASSES\CLSID\{49CBB1C7-97D1-485A-9EC1-A26065633066}</TargetObject>
+				<TargetObject name="49 - T1060 _ Persistence _ Startup User Shell Folder Modified" condition="end with">software\microsoft\windows\currentversion\explorer\user shell folders\startup</TargetObject>
+				<TargetObject name="50 - T1037 _ Persistence _ Winlogon Shell" condition="end with">CurrentVersion\Winlogon\Shell</TargetObject>
+				<TargetObject name="51 - T1182 _ Persistence _ SilentProcessExit hijack" condition="contains">CurrentVersion\SilentProcessExit</TargetObject>
+				<TargetObject name="T1543.003 _ Service Modification _ Sysmon Driver" condition="contains">SYSTEM\CurrentControlSet\services\SysmonDrv</TargetObject>
+				<TargetObject name="T1543.003 _ Service Modification _ Sysmon" condition="contains">SYSTEM\CurrentControlSet\services\Sysmon</TargetObject>
+				<TargetObject name="T1547.001 _ Registry Run Keys / Start Folder" condition="contains">\CurrentVersion\Run</TargetObject>
+				<!--Microsoft:Windows: Run keys, incld RunOnce, RunOnceEx, RunServices, RunServicesOnce [Also covers terminal server] -->
+				<TargetObject name="T1037 _ Boot or Logon Initialization Scripts" condition="contains">\Windows\System\Scripts</TargetObject>
+				<!--Microsoft:Windows: Logon, Loggoff, Shutdown-->
+				<TargetObject name="T1547.001 _ Registry Run Keys / Start Folder" condition="contains">\Policies\Explorer\Run</TargetObject>
+				<!--Microsoft:Windows -->
+				<TargetObject name="T1543.003 _ Service Modification _ Service Start Type mode" condition="end with">\Start</TargetObject>
+				<!--Microsoft:Windows: Services start mode changes (Disabled, Automatically, Manual)-->
+				<TargetObject name="T1547.004 _ Boot or Logon AutoStart Execution _ Winlogon Helper DLL" condition="begin with">HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Notify</TargetObject>
+				<!--Microsoft:Windows: Autorun location [ https://www.cylance.com/windows-registry-persistence-part-2-the-run-keys-and-search-order ] -->
+				<TargetObject name="T1547.004 _ Boot or Logon AutoStart Execution _ Winlogon Helper DLL" condition="begin with">HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Userinit</TargetObject>
+				<!--Microsoft:Windows: Autorun location [ https://www.cylance.com/windows-registry-persistence-part-2-the-run-keys-and-search-order ] -->
+				<TargetObject name="T1547.004 _ Boot or Logon AutoStart Execution _ Winlogon Helper DLL" condition="begin with">HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Shell</TargetObject>
+				<TargetObject name="T1547.001 _ Registry Run Keys / Start Folder" condition="begin with">HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\BootExecute</TargetObject>
+				<!--Microsoft:Windows: Autorun | Credit @ion-storm | [ https://www.cylance.com/windows-registry-persistence-part-2-the-run-keys-and-search-order ] -->
+				<TargetObject name="Persistence - Application Shimming" condition="contains" >CurrentVersion\AppCompatFlags\InstalledSDB</TargetObject>
+				<TargetObject name="T1484.001 _ Group Policy Modification _ Scripts" condition="contains">\Group Policy\Scripts</TargetObject>
+				<!--Microsoft:Windows: Group policy scripts-->
+				<TargetObject name="T1547.001 _ Registry Run Keys / Start Folder" condition="contains">Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders\Startup</TargetObject>
+				<TargetObject name="T1546.001 _ Change Default File Association" condition="contains">\shell\install\command</TargetObject>
+				<!--Microsoft:Windows: Sensitive subkey under file associations and CLSID that map to launch command-->
+				<TargetObject name="T1546.001 _ Change Default File Association" condition="contains">\shell\open\command</TargetObject>
+				<!--Microsoft:Windows: Sensitive subkey under file associations and CLSID that map to launch command-->
+				<TargetObject name="T1546.001 _ Change Default File Association" condition="contains">\shell\open\ddeexec</TargetObject>
+				<!--Microsoft:Windows: Sensitive subkey under file associations and CLSID that map to launch command-->
+				<TargetObject condition="begin with">HKLM\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection\DisableBehaviorMonitoring</TargetObject>
+				<TargetObject condition="begin with">HKLM\SOFTWARE\Policies\Microsoft\Windows Defender\DisableAntiVirus</TargetObject>
+				<TargetObject condition="end with">\PsService\EulaAccepted</TargetObject>
+				<TargetObject condition="end with">\PsLoggedOn\EulaAccepted</TargetObject>
+				<TargetObject condition="end with">\EulaAccepted</TargetObject>
+				<TargetObject condition="contains">\InprocServer32\</TargetObject>
+				<!-- COM Stuff -->
+				<TargetObject condition="contains">\CurrentVersion\Run</TargetObject>
+				<TargetObject condition="end with">\ServiceDll</TargetObject>
+				<!--Microsoft:Windows: Points to a service's DLL [ https://blog.cylance.com/windows-registry-persistence-part-1-introduction-attack-phases-and-windows-services ] -->
+				<TargetObject condition="contains">\shell\open\ddeexec</TargetObject>
+				<TargetObject condition="begin with">HKLM\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection\DisableScanOnRealtimeEnable</TargetObject>
+				<TargetObject condition="contains">SOFTWARE\Microsoft\Netsh</TargetObject>
+				<TargetObject condition="begin with">HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options</TargetObject>
+				<TargetObject condition="end with">\ImagePath</TargetObject>
+				<TargetObject condition="contains">SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LSASS.exe</TargetObject>
+				<TargetObject condition="begin with">HKLM\SOFTWARE\Microsoft\Security Center\FirewallOverride</TargetObject>
+				<TargetObject condition="begin with">HKLM\SOFTWARE\Microsoft\Security Center\FirewallDisableNotify</TargetObject>
+				<TargetObject condition="begin with">HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options</TargetObject>
+				<TargetObject condition="begin with">HKLM\SYSTEM\CurrentControlSet\Control\Lsa\Authentication</TargetObject>
+				<TargetObject condition="end with">Control\Lsa\Notification Packages</TargetObject>
+				<!-- persistence lsaprovider - multi sz -->
+				<TargetObject condition="end with">Control\SecurityProviders\SecurityProviders</TargetObject>
+				<!-- persistence lsaprovider - multi sz -->
+				<TargetObject condition="end with">Control\Lsa\Authentication Packages</TargetObject>
+				<!-- persistence lsaprovider - multi sz-->
+				<TargetObject condition="contains">Software\Classes\CLSID</TargetObject>
+				<!--New Additions Config_20210316+ -->
+				<TargetObject name="T1543.003 _ Service Modification _ Splunk Forwarder" condition="begin with">HKLM\System\CurrentControlSet\Services\SplunkForwarder</TargetObject>
+				<TargetObject name="T1543.003 _ Service Modification _ software restriction " condition="begin with">HKLM\System\CurrentControlSet\Services\srv</TargetObject>
+				<TargetObject name="T1543.003 _ Service Modification _ Sysmon" condition="begin with">HKLM\System\CurrentControlSet\Services\Sysmon</TargetObject>
+				<TargetObject name="T1543.003 _ Service Modification _ Tanium" condition="begin with">HKLM\System\CurrentControlSet\Services\Tanium</TargetObject>
+				<TargetObject name="T1543.003 _ Service Modification _ Application Identity" condition="begin with">HKLM\System\CurrentControlSet\Services\AppIDsvc</TargetObject>
+				<TargetObject name="T1543.003 _ Service Modification _ Windows Defender" condition="begin with">HKLM\System\CurrentControlSet\Services\WinDefend</TargetObject>
+				<TargetObject name="T1543.003 _ Service Modification _ Firewall" condition="begin with">HKLM\System\CurrentControlSet\Services\mpssvc</TargetObject>
+				<!--New Additions Config_20210326+ -->
+				<!--<TargetObject name="T1546.001 _ Change Default File Association" condition="contains">\Explorer\FileExts</TargetObject>Microsoft:Windows: Changes to file extension mapping-->
+				<Rule groupRelation="and" name="Event Log Setting Modification">
+					<TargetObject condition="contains">HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Channels\</TargetObject>
+					<TargetObject condition="contains">Enabled</TargetObject>
+				</Rule>
+				<!--New Additions Config_20210409+ -->
+				<TargetObject name="Policy Modification _ Windows Defender Exclusions" condition="begin with">HKLM\SOFTWARE\Policies\Microsoft\Windows Defender\exclusions\</TargetObject>
+				<TargetObject name="Policy Modification _ Windows Defender Exclusions" condition="begin with">HKLM\SOFTWARE\Microsoft\Windows Defender\exclusions\</TargetObject>
+				<TargetObject name="Policy Modification _ Windows Defender Real-Time Protection" condition="begin with">HKLM\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection</TargetObject>
+				<TargetObject name="Policy Modification _ Control Panel Item" condition="begin with">HKCU\Software\Microsoft\Windows\CurrentVersion\Control Panel\CPLs\</TargetObject>
+				<TargetObject name="Policy Modification _ Control Panel Item" condition="begin with">HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ControlPanel\</TargetObject>
+			    	<TargetObject name="Policy Modification _ Windows Defender Exclusions" condition="begin with">HKLM\SOFTWARE\Microsoft Windows Defender\Features\Controls</TargetObject>
+				<!--New Additions Config_20220322+ -->
+				<TargetObject name="T1547.012 _ Print Spooler Exploit - PrintProcessor Directory"  condition="begin with">HKLM:System\CurrentControlSet\Control\Print\Environments\Windows x64\Print Processors\</TargetObject>
+                <TargetObject name="T1566 _ VSTO"  condition="contains">Software\Microsoft\VSTO\SolutionMetadata\</TargetObject>
+        </RegistryEvent>
+		</RuleGroup>
+		<RuleGroup name="" groupRelation="or">
+			<RegistryEvent onmatch="exclude">
+				<Image condition="is">C:\Program Files (x86)\Tanium\Tanium Client\TaniumClient.exe</Image>
+				<Image condition="is">C:\WINDOWS\system32\taskhostw.exe</Image>
+				<TargetObject condition="is">HKLM\System\CurrentControlSet\Services\Tcpip\Parameters</TargetObject>
+				<!--New Additions Config_20210316+ -->
+				<Image condition="is">C:\Program Files (x86)\Tanium\Tanium Client\Tools\recorder\TaniumRecorderCtl.exe</Image>
+				<Image condition="is">C:\Program Files (x86)\Tanium\Tanium Client\Python27\TPython.exe</Image>
+				<!--New Additions Config_20210603+ -->
+				<Image condition="is">C:\Windows\System32\svchost.exe</Image>
+			</RegistryEvent>
+		</RuleGroup>
+		<RuleGroup name="" groupRelation="or">
+			<!-- Event ID 15 == FileStream Created. -->
+			<FileCreateStreamHash onmatch="include">
+				<TargetFilename name="T1560 _ hash _ Temp\7z" condition="contains">Temp\7z</TargetFilename>
+				<TargetFilename name="T1059 _ hash of .bat _ Batch File" condition="end with">.bat</TargetFilename>
+				<TargetFilename name="T1059 _ hash of .cmd _ Batch File" condition="end with">.cmd</TargetFilename>
+				<TargetFilename name="T1003 _ hash _ bin File" condition="end with">.bin</TargetFilename>
+				<TargetFilename name="T1204 _ hash _ Downloads" condition="contains">Downloads</TargetFilename>
+				<TargetFilename name="T1204 _ hash of .exe _ Executable File" condition="end with">.exe</TargetFilename>
+				<TargetFilename name="T1059 _ hash of.hta _ HTML Application File" condition="end with">.hta</TargetFilename>
+				<TargetFilename name="T1547.009 _ hash_.lnk _ Browser Shortcut File" condition="end with">.lnk</TargetFilename>
+				<TargetFilename name="T1204 _ hash _ Outlook Downloads" condition="contains">Content.Outlook</TargetFilename>
+				<TargetFilename name="T1059.001 _ hash of .ps1 _ PowerShell" condition="end with">.ps1</TargetFilename>
+				<TargetFilename name="T1059.001 _ hash of .ps2 _ PowerShell" condition="end with">.ps2</TargetFilename>
+				<TargetFilename name="T1112 _ hash of .reg _ Windows Registry File" condition="end with">.reg</TargetFilename>
+				<TargetFilename name="T1059 _ hash of .vb _ VisualBasic File" condition="end with">.vb</TargetFilename>
+				<TargetFilename name="T1059 _ hash of .vbe _ VBScript File" condition="end with">.vbe</TargetFilename>
+				<TargetFilename name="T1059 _ hash of .vbs _ VBScript File" condition="end with">.vbs</TargetFilename>
+				<TargetFilename name="T1204 _ hash of .js _ JavaScript File" condition="end with">.js</TargetFilename>
+				<TargetFilename name="T1204 _ hash of .xltm _ Compressed Document" condition="end with">.zip</TargetFilename>
+				<TargetFilename name="T1204 _ hash of .dot _ Word Template Document" condition="end with">.dot</TargetFilename>
+				<!--New Additions Config_20210409+ -->
+				<TargetFilename name="T1574.002 _ File Created .dll _ DLL image File" condition="end with">.dll</TargetFilename>
+				<!--New Additions Config_20210603+ -->
+				<TargetFilename name="T1204 _ hash of .img _ Image archive file" condition="end with">.img</TargetFilename>
+				<TargetFilename name="T1204 _ hash of .iso _ Image archive file" condition="end with">.iso</TargetFilename>
+				<TargetFilename name="T1059 _ hash of .jse _ Javascript File" condition="end with">.jse</TargetFilename>
+				<TargetFilename name="T1204 _ hash of .cpl _ Control Panel File" condition="end with">.cpl</TargetFilename>
+				<!--New Additions Config_20210804+ -->
+				<TargetFilename name="T1204 _ File Created .sys _ MS-DOS File" condition="end with">.sys</TargetFilename>
+				<Image name="T1204 _ File Created from .sys Driver" condition="end with">.sys</Image>
+				<!--New Additions Config_20210831+ -->
+            			<TargetFilename name="T1204 _ hash of .dotx _ Word Document" condition="end with">.dotx</TargetFilename>
+            			<TargetFilename name="T1204 _ hash of.slk _Symbolic Link File" condition="end with">.slk</TargetFilename>
+				<!--New Additions Config_20210903+ (Office file types) -->
+				<TargetFilename name="T1204 _ hash of .doc _ Word Document" condition="end with">.doc</TargetFilename>
+				<TargetFilename name="T1204 _ hash of .dotm _ Word Document" condition="end with">.dotm</TargetFilename>
+				<TargetFilename name="T1204 _ hash of .dot _ Word Template Document" condition="end with">.dot</TargetFilename>
+				<TargetFilename name="T1204 _ hash of .docx _ Word Document" condition="end with">.docx</TargetFilename>
+				<TargetFilename name="T1204 _ hash of .docm _ Word Document" condition="end with">.docm</TargetFilename>
+				<TargetFilename name="T1204 _ hash of .xls _ Excel Document" condition="end with">.xls</TargetFilename>	
+				<TargetFilename name="T1204 _ hash of .xlsm _ Excel Document" condition="end with">.xlsm</TargetFilename>
+				<TargetFilename name="T1204 _ hash of .xlm _ Excel Document" condition="end with">.xlm</TargetFilename>
+				<TargetFilename name="T1204 _ hash of .xls _ Excel Document" condition="end with">.xls</TargetFilename>
+				<TargetFilename name="T1204 _ hash of .xlt _ Excel Document" condition="end with">.xlt</TargetFilename>
+				<TargetFilename name="T1204 _ hash of .xltm _ Excel Document" condition="end with">.xltm</TargetFilename>
+				<TargetFilename name="T1204 _ hash of .xlsb _ Excel Document" condition="end with">.xlsb</TargetFilename>	
+				<TargetFilename name="T1204 _ hash of .xlam _ Excel Document" condition="end with">.xlam</TargetFilename>
+				<TargetFilename name="T1204 _ hash of .xla _ Excel Document" condition="end with">.xla</TargetFilename>
+				<TargetFilename name="T1204 _ hash of .pptm _ PowerPoint Document" condition="end with">.pptm</TargetFilename>
+				<TargetFilename name="T1204 _ hash of .potm _ PowerPoint Macro" condition="end with">.potm</TargetFilename>
+				<TargetFilename name="T1204 _ hash of .ppsm _ PowerPoint Document" condition="end with">.ppsm</TargetFilename>
+				<TargetFilename name="T1204 _ hash of .sldm _ PowerPoint Document" condition="end with">.sldm</TargetFilename>
+            			<TargetFilename name="T1204 _ hash of .xll _ MSFT Add-In" condition="end with">.xll</TargetFilename>
+            			<TargetFilename name="T1204 _ hash of .wll _ MSFT Add-In" condition="end with">.wll</TargetFilename>
+				<!--New Additions Config_20210908+ -->
+				<TargetFilename name="T1204 _ hash of .daa _ Direct Access Archive File" condition="end with">.daa</TargetFilename>
+				<!--New Additions Config_20220228+ -->
+				<TargetFilename name="T1204 _ hash of .appx _ Windows Application Package " condition="end with">.appx</TargetFilename>
+				<TargetFilename name="T1204 _ hash of .config _ " condition="end with">.config</TargetFilename>
+				<TargetFilename name="T1204 _ hash of .msi _ Windows Install Package " condition="end with">.msi</TargetFilename>
+				<TargetFilename name="T1204 _ hash of .pyd _ Python file" condition="end with">.pyd</TargetFilename>
+				<TargetFilename name="T1204 _ hash of .pyi _ Python file" condition="end with">.pyi</TargetFilename>
+				<!--New Additions Config_20220322+ -->
+				<TargetFilename name="T1204 _ hash of .lua _ lua source code file " condition="end with">.lua</TargetFilename>
+				<TargetFilename name="T1204 _ hash of .ocx _ reusable software module" condition="end with">.ocx</TargetFilename>
+				<TargetFilename name="T1059 _ hash of .chm _ Compressed HTML File " condition="end with">.chm</TargetFilename>
+				<TargetFilename name="T1059 _ hash of .vsto _ Visual Studio Tools for Office " condition="end with">.vsto</TargetFilename>
+                <TargetFilename name="T1204 _ File Created .application _ ClickOnce Broswer Application File" condition="end with">.application</TargetFilename>
+
+            </FileCreateStreamHash>
+		</RuleGroup>
+		<RuleGroup name="" groupRelation="or">
+			<!-- Event ID 17,18 == PipeEvent. Log Named pipe created & Named pipe connected -->
+			<PipeEvent onmatch="include">
+				
+				<Rule groupRelation="and" name="Possible CobaltStrike AnonymousPipe Usage">
+					<Image condition="contains any">cscript.exe;dllhost.exe;firefox.exe;lsass.exe;msedge.exe;svchost.exe;winlogon.exe;runonce.exe;svchost.exe;
+regsvr32.exe;WUAUCLT.exe;rundll32.exe;taskhostw.exe;presentationhost.exe;filehistory.exe;stordiag.exe;scriptrunner.exe;caitstatic.exe;Microsoft.Uev.Synccontroller.exe;Tswpfwrp.exe;Uevagentpolicygenerator.exe;
+UevAppMonitor.exe;UevTemplateBaselineGenerator.exe;UevTemplateConfigItemGenerator.exe;WerFault.exe;Compact.exe;Eventvwr.exe;Gpresult.exe;gpupdate.exe;Iexplore.exe;Mavinject.exe;
+Mstsc.exe;Net.exe;W32tm.exe;Wusa.exe;wmiprvse.exe </Image>
+					<PipeName condition="contains">Anonymous Pipe</PipeName>
+				</Rule>
+			</PipeEvent>
+		</RuleGroup>
+		<RuleGroup name="" groupRelation="or">
+			<!-- Event ID 17,18 == PipeEvent. Log Named pipe created & Named pipe connected -->
+			<PipeEvent onmatch="exclude">
+			<!--New Additions Config_20210923+ -->
+			<Image condition="begin with">C:\Program Files (x86)\Tanium\Tanium Client\</Image>
+			<Image condition="end with">\AppData\Local\Microsoft\Teams\current\Teams.exe</Image>
+			<PipeName condition="is">\srvsvc</PipeName>
+			<PipeName condition="is">\lsass</PipeName>
+			<PipeName condition="is">\wkssvc</PipeName>
+			
+			</PipeEvent>
+		</RuleGroup>
+		<RuleGroup name="" groupRelation="or">
+			<!-- Event ID 19,20,21, == WmiEvent. Log all WmiEventFilter, WmiEventConsumer, WmiEventConsumerToFilter activity-->
+			<WmiEvent onmatch="include"></WmiEvent>
+		</RuleGroup>
+		<RuleGroup groupRelation="or">
+			<DnsQuery onmatch="include">
+				<!--New Additions Config_20210923+ -->
+				<Image condition="begin with">C:\windows\</Image>
+				<Image condition="end with">Teams.exe</Image>
+				<Image condition="end with">powerpnt.exe</Image>
+				<Image condition="end with">excel.exe</Image>
+				<Image condition="end with">winword.exe</Image>
+			</DnsQuery>
+            </RuleGroup>
+		<RuleGroup name="" groupRelation="or">
+			<DnsQuery onmatch="exclude">
+				<QueryName condition="contains">WITANIUM</QueryName>
+				<QueryName condition="is">localhost</QueryName>
+				<QueryName condition="begin with">proxy</QueryName>
+				<QueryName condition="end with">teams.microsoft.com</QueryName>
+				<QueryName condition="end with">data.microsoft.com</QueryName>
+				<QueryName condition="is">browser.pipe.aria.microsoft.com</QueryName>
+				<QueryName condition="is">outlook.office.com</QueryName>
+				<QueryName condition="is">substrate.office.com</QueryName>
+				<QueryName condition="end with">.cc.skype.com</QueryName>
+			</DnsQuery>
+		</RuleGroup>
+	</EventFiltering>
